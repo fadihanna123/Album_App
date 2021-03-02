@@ -1,3 +1,3 @@
 # AlbumApp
 
-React app build using by React Native.
+React app built using by React Native.

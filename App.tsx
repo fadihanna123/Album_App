@@ -16,13 +16,6 @@ const App = () => {
     <View style={styles.container}>
       <View>
         <GalleryTxt
-          list={list}
-          setList={setList}
-          loading={loading}
-          setLoading={setLoading}
-          photo={photo}
-          setPhoto={setPhoto}
-          view={view}
           setView={setView}
         />
         <PhotoAlbum

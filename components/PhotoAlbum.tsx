@@ -15,7 +15,7 @@ import { StatusBar } from "expo-status-bar";
 import * as Permissions from "expo-permissions";
 import * as MediaLibrary from "expo-media-library";
 
-import { Props } from "../typings/List";
+import { Props } from "../typings";
 
 const PhotoAlbum = ({
   view,

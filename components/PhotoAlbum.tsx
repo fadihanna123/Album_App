@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     margin: 4,
   },
   galleryPhoto: {
-    width: 65,
+    width: 85,
     height: 100,
   },
   spinnerTextStyle: {

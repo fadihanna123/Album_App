@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StatusBar, StyleSheet } from "react-native";
 
 import GalleryTxt from "./components/GalleryTxt";
 import PhotoAlbum from "./components/PhotoAlbum";
@@ -15,9 +15,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <View>
-        <GalleryTxt
-          setView={setView}
-        />
+        <GalleryTxt setView={setView} />
         <PhotoAlbum
           list={list}
           setList={setList}
@@ -29,6 +27,7 @@ const App = () => {
           setView={setView}
         />
       </View>
+      <StatusBar />
     </View>
   );
 };
@@ -40,9 +39,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    margin: 30,
+    margin: 40,
     padding: 5,
     flexGrow: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#2EBD6B",
+    paddingTop: 10,
   },
 });

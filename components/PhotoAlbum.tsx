@@ -1,19 +1,18 @@
+import * as MediaLibrary from "expo-media-library";
+import { StatusBar } from "expo-status-bar";
+import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import {
-  View,
+  Alert,
+  Button,
+  Image,
   ScrollView,
   StyleSheet,
-  Image,
-  Button,
   TouchableOpacity,
-  Alert,
+  View,
 } from "react-native";
-import PropTypes from "prop-types";
 import Spinner from "react-native-loading-spinner-overlay";
 import { uid } from "react-uid";
-import { StatusBar } from "expo-status-bar";
-import * as Permissions from "expo-permissions";
-import * as MediaLibrary from "expo-media-library";
 
 import { Props } from "../typings";
 
@@ -28,7 +27,8 @@ const PhotoAlbum = ({
   list,
 }: Props) => {
   const showAlbum = async () => {
-    const { status } = await Permissions.askAsync(Permissions.MEDIA_LIBRARY);
+    await MediaLibrary.requestPermissionsAsync();
+    const { status } = await MediaLibrary.getPermissionsAsync();
 
     if (status !== "granted") {
       Alert.alert("Du kan inte komma åt detta innehåll");
@@ -36,14 +36,14 @@ const PhotoAlbum = ({
     }
 
     try {
-      setLoading(true);
+      setLoading && setLoading(true);
       const results: any = await MediaLibrary.getAssetsAsync({
         first: 1000,
         mediaType: ["photo"],
         sortBy: ["creationTime"],
       });
-      setList(results);
-      setLoading(false);
+      setList && setList(results);
+      setLoading && setLoading(false);
     } catch (e) {
       Alert.alert(e.message);
       return;
@@ -51,10 +51,10 @@ const PhotoAlbum = ({
   };
 
   const _show = (pic: string) => {
-    setLoading(true);
-    setPhoto(pic);
+    setLoading && setLoading(true);
+    setPhoto && setPhoto(pic);
     setView(true);
-    setLoading(false);
+    setLoading && setLoading(false);
   };
 
   useEffect(() => {

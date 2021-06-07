@@ -37,23 +37,29 @@ const PhotoAlbum = ({
 
     try {
       setLoading && setLoading(true);
+
       const results: any = await MediaLibrary.getAssetsAsync({
         first: 1000,
         mediaType: ["photo"],
         sortBy: ["creationTime"],
       });
       setList && setList(results);
+
       setLoading && setLoading(false);
     } catch (e) {
       Alert.alert(e.message);
+
       return;
     }
   };
 
   const _show = (pic: string) => {
     setLoading && setLoading(true);
+
     setPhoto && setPhoto(pic);
+
     setView(true);
+
     setLoading && setLoading(false);
   };
 

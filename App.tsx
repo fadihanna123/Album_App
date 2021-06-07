@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StatusBar, StyleSheet } from "react-native";
+import { StatusBar, StyleSheet, View } from "react-native";
 
 import GalleryTxt from "./components/GalleryTxt";
 import PhotoAlbum from "./components/PhotoAlbum";

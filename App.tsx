@@ -1,5 +1,3 @@
-import "normalize.css";
-
 import React, { useState } from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
 

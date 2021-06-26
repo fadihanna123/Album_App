@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { StatusBar, StyleSheet, View } from "react-native";
+import { StatusBar, View } from "react-native";
 
 import GalleryTxt from "./components/GalleryTxt";
 import PhotoAlbum from "./components/PhotoAlbum";
+import { styles } from "./styles";
 
 const App = () => {
   const [list, setList] = useState<{ assets: [Object] }>({
@@ -35,16 +36,3 @@ const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    margin: 40,
-    padding: 5,
-    flexGrow: 1,
-    backgroundColor: "#2EBD6B",
-    paddingTop: 10,
-  },
-});

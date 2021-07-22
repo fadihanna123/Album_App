@@ -7,4 +7,5 @@ export interface Props {
   setView: (view: boolean) => void;
   list?: { assets: [Object] };
   setList?: (list: { assets: [Object] }) => void;
+  album?: any;
 }

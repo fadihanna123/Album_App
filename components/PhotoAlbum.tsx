@@ -2,19 +2,13 @@ import * as MediaLibrary from "expo-media-library";
 import { StatusBar } from "expo-status-bar";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
-import {
-  Alert,
-  Button,
-  Image,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Alert, Button, Image, ScrollView, View } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 import { uid } from "react-uid";
+import { PhotoAlbumStyles } from "../styles/";
 
 import { Props } from "../typings";
+import PhotoItem from "./PhotoItem";
 
 const PhotoAlbum = ({
   view,
@@ -26,7 +20,7 @@ const PhotoAlbum = ({
   setList,
   list,
 }: Props) => {
-  const showAlbum = async () => {
+  const showAlbum = async (): Promise<void> => {
     await MediaLibrary.requestPermissionsAsync();
     const { status } = await MediaLibrary.getPermissionsAsync();
 
@@ -43,6 +37,7 @@ const PhotoAlbum = ({
         mediaType: ["photo"],
         sortBy: ["creationTime"],
       });
+
       setList && setList(results);
 
       setLoading && setLoading(false);
@@ -53,38 +48,35 @@ const PhotoAlbum = ({
     }
   };
 
-  const _show = (pic: string) => {
-    setLoading && setLoading(true);
-
-    setPhoto && setPhoto(pic);
-
-    setView(true);
-
-    setLoading && setLoading(false);
-  };
-
   useEffect(() => {
     showAlbum();
   }, []);
 
+  const props = {
+    loading: loading,
+    setLoading: setLoading,
+    setPhoto: setPhoto,
+    setView: setView,
+  };
+
   return (
     <>
-      <ScrollView contentContainerStyle={styles.scroll}>
+      <ScrollView contentContainerStyle={PhotoAlbumStyles.scroll}>
         {view ? (
-          <View style={styles.imageViewer}>
+          <View style={PhotoAlbumStyles.imageViewer}>
             <Spinner
               visible={loading}
               textContent={"Loading..."}
-              textStyle={styles.spinnerTextStyle}
+              textStyle={PhotoAlbumStyles.spinnerTextStyle}
             />
             <Image
               source={{
                 uri: photo,
               }}
               resizeMode="contain"
-              style={styles.viewImage}
+              style={PhotoAlbumStyles.viewImage}
             />
-            <View style={styles.backButton}>
+            <View style={PhotoAlbumStyles.backButton}>
               <Button
                 color="black"
                 title="Back"
@@ -94,26 +86,7 @@ const PhotoAlbum = ({
           </View>
         ) : (
           list?.assets.map((album: any) => (
-            <View key={uid(album)}>
-              <Spinner
-                visible={loading}
-                textContent={"Loading..."}
-                textStyle={styles.spinnerTextStyle}
-                animation="fade"
-                overlayColor="black"
-              />
-              <TouchableOpacity
-                onPress={() => _show(album.uri)}
-                style={styles.galleryContainer}
-              >
-                <Image
-                  source={{
-                    uri: album.uri,
-                  }}
-                  style={styles.galleryPhoto}
-                />
-              </TouchableOpacity>
-            </View>
+            <PhotoItem album={album} key={uid(album)} {...props} />
           ))
         )}
         <StatusBar style="auto" />
@@ -143,33 +116,3 @@ PhotoAlbum.defaultProps = {
 };
 
 export default PhotoAlbum;
-
-const styles = StyleSheet.create({
-  scroll: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    flexGrow: 1,
-  },
-  imageViewer: {
-    width: "100%",
-  },
-  viewImage: {
-    width: "100%",
-    height: "85%",
-    borderWidth: 1,
-  },
-  backButton: {
-    width: "100%",
-    backgroundColor: "white",
-  },
-  galleryContainer: {
-    margin: 4,
-  },
-  galleryPhoto: {
-    width: 85,
-    height: 100,
-  },
-  spinnerTextStyle: {
-    color: "#FFF",
-  },
-});

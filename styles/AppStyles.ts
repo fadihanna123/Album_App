@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const appStyles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",

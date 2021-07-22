@@ -3,7 +3,7 @@ import { StatusBar, View } from "react-native";
 
 import GalleryTxt from "./components/GalleryTxt";
 import PhotoAlbum from "./components/PhotoAlbum";
-import { styles } from "./styles";
+import { appStyles } from "./styles";
 
 const App = () => {
   const [list, setList] = useState<{ assets: [Object] }>({
@@ -25,7 +25,7 @@ const App = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={appStyles.container}>
       <View>
         <GalleryTxt setView={setView} />
         <PhotoAlbum {...PhotoAlbumProps} />

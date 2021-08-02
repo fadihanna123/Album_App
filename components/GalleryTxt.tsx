@@ -5,19 +5,16 @@ import { StyleSheet, Text } from "react-native";
 import { Props } from "../typings";
 
 const GalleryTxt = ({ setView }: Props) => {
+  const showHomePage = (): void => {
+    setView(false);
+  };
+
   return (
-    <>
-      <Text
-        style={styles.txtBox}
-        onPress={() => {
-          setView(false);
-        }}
-      >
-        <Text>Gallery</Text>
-        {"\n"}
-        <Text style={styles.name}>Created by Fadi Hanna</Text>
-      </Text>
-    </>
+    <Text style={styles.txtBox} onPress={showHomePage}>
+      <Text>Gallery</Text>
+      {"\n"}
+      <Text style={styles.name}>Created by Fadi Hanna</Text>
+    </Text>
   );
 };
 

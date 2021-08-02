@@ -20,12 +20,16 @@ const PhotoAlbum = ({
   setList,
   list,
 }: Props) => {
+  const showHomePage = (): void => {
+    setView(false);
+  };
+
   const showAlbum = async (): Promise<void> => {
     await MediaLibrary.requestPermissionsAsync();
     const { status } = await MediaLibrary.getPermissionsAsync();
 
     if (status !== "granted") {
-      Alert.alert("Du kan inte komma åt detta innehåll");
+      Alert.alert("Your mobile should allow access to pictures!");
       return;
     }
 
@@ -45,6 +49,8 @@ const PhotoAlbum = ({
       Alert.alert(e.message);
 
       return;
+    } finally {
+      setLoading && setLoading(false);
     }
   };
 
@@ -60,38 +66,32 @@ const PhotoAlbum = ({
   };
 
   return (
-    <>
-      <ScrollView contentContainerStyle={PhotoAlbumStyles.scroll}>
-        {view ? (
-          <View style={PhotoAlbumStyles.imageViewer}>
-            <Spinner
-              visible={loading}
-              textContent={"Loading..."}
-              textStyle={PhotoAlbumStyles.spinnerTextStyle}
-            />
-            <Image
-              source={{
-                uri: photo,
-              }}
-              resizeMode="contain"
-              style={PhotoAlbumStyles.viewImage}
-            />
-            <View style={PhotoAlbumStyles.backButton}>
-              <Button
-                color="black"
-                title="Back"
-                onPress={() => setView(false)}
-              ></Button>
-            </View>
+    <ScrollView contentContainerStyle={PhotoAlbumStyles.scroll}>
+      {view && !loading ? (
+        <View style={PhotoAlbumStyles.imageViewer}>
+          <Spinner
+            visible={loading}
+            textContent={"Loading..."}
+            textStyle={PhotoAlbumStyles.spinnerTextStyle}
+          />
+          <Image
+            source={{
+              uri: photo,
+            }}
+            resizeMode="contain"
+            style={PhotoAlbumStyles.viewImage}
+          />
+          <View style={PhotoAlbumStyles.backButton}>
+            <Button color="black" title="Back" onPress={showHomePage}></Button>
           </View>
-        ) : (
-          list?.assets.map((album: any) => (
-            <PhotoItem album={album} key={uid(album)} {...props} />
-          ))
-        )}
-        <StatusBar style="auto" />
-      </ScrollView>
-    </>
+        </View>
+      ) : (
+        list?.assets.map((album: any) => (
+          <PhotoItem album={album} key={uid(album)} {...props} />
+        ))
+      )}
+      <StatusBar style="auto" />
+    </ScrollView>
   );
 };
 

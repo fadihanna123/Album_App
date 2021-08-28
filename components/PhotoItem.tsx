@@ -1,9 +1,10 @@
 import React from "react";
-import { Image, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
+
 import { Props } from "../typings";
 
-const PhotoItem = ({
+const PhotoItem: React.FC<Props> = ({
   album,
   loading,
   setLoading,

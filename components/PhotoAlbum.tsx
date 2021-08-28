@@ -1,16 +1,15 @@
-import * as MediaLibrary from "expo-media-library";
 import { StatusBar } from "expo-status-bar";
-import PropTypes from "prop-types";
 import React, { useEffect } from "react";
-import { Alert, Button, Image, ScrollView, View } from "react-native";
+import { Button, Image, ScrollView, View } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 import { uid } from "react-uid";
-import { PhotoAlbumStyles } from "../styles/";
 
+import { showAlbum } from "../functions";
+import { PhotoAlbumStyles } from "../styles/";
 import { Props } from "../typings";
 import PhotoItem from "./PhotoItem";
 
-const PhotoAlbum = ({
+const PhotoAlbum: React.FC<Props> = ({
   view,
   loading,
   setLoading,
@@ -24,38 +23,17 @@ const PhotoAlbum = ({
     setView(false);
   };
 
-  const showAlbum = async (): Promise<void> => {
-    await MediaLibrary.requestPermissionsAsync();
-    const { status } = await MediaLibrary.getPermissionsAsync();
-
-    if (status !== "granted") {
-      Alert.alert("Your mobile should allow access to pictures!");
-      return;
-    }
-
-    try {
-      setLoading && setLoading(true);
-
-      const results: any = await MediaLibrary.getAssetsAsync({
-        first: 1000,
-        mediaType: ["photo"],
-        sortBy: ["creationTime"],
-      });
-
-      setList && setList(results);
-
-      setLoading && setLoading(false);
-    } catch (e) {
-      Alert.alert(e.message);
-
-      return;
-    } finally {
-      setLoading && setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    showAlbum();
+    showAlbum(
+      setLoading as (loading: boolean | undefined) => {},
+      setList as (
+        list:
+          | {
+              assets: [{}];
+            }
+          | undefined
+      ) => void | undefined
+    );
   }, []);
 
   const props = {
@@ -93,26 +71,6 @@ const PhotoAlbum = ({
       <StatusBar style="auto" />
     </ScrollView>
   );
-};
-
-PhotoAlbum.propTypes = {
-  view: PropTypes.bool.isRequired,
-  loading: PropTypes.bool.isRequired,
-  setLoading: PropTypes.func.isRequired,
-  photo: PropTypes.string.isRequired,
-  setPhoto: PropTypes.func.isRequired,
-  setView: PropTypes.func.isRequired,
-  list: PropTypes.object.isRequired,
-};
-
-PhotoAlbum.defaultProps = {
-  view: false,
-  loading: false,
-  setLoading: false,
-  photo: "",
-  setPhoto: "",
-  setView: false,
-  list: {},
 };
 
 export default PhotoAlbum;

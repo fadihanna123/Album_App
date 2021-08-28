@@ -5,9 +5,9 @@ import GalleryTxt from "./components/GalleryTxt";
 import PhotoAlbum from "./components/PhotoAlbum";
 import { appStyles } from "./styles";
 
-const App = () => {
-  const [list, setList] = useState<{ assets: [Object] }>({
-    assets: [Object],
+const App: React.FC = () => {
+  const [list, setList] = useState<{ assets: [{}] }>({
+    assets: [{}],
   });
   const [photo, setPhoto] = useState<string>("");
   const [view, setView] = useState<boolean>(false);

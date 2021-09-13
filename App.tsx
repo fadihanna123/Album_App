@@ -1,38 +1,6 @@
-import React, { useState } from "react";
-import { StatusBar, View } from "react-native";
+import React from "react";
+import Layout from "./app/Layout";
 
-import GalleryTxt from "./components/GalleryTxt";
-import PhotoAlbum from "./components/PhotoAlbum";
-import { appStyles } from "./styles";
-
-const App: React.FC = () => {
-  const [list, setList] = useState<{ assets: [{}] }>({
-    assets: [{}],
-  });
-  const [photo, setPhoto] = useState<string>("");
-  const [view, setView] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
-
-  const PhotoAlbumProps = {
-    list: list,
-    setList: setList,
-    loading: loading,
-    setLoading: setLoading,
-    photo: photo,
-    setPhoto: setPhoto,
-    view: view,
-    setView: setView,
-  };
-
-  return (
-    <View style={appStyles.container}>
-      <View>
-        <GalleryTxt setView={setView} />
-        <PhotoAlbum {...PhotoAlbumProps} />
-      </View>
-      <StatusBar />
-    </View>
-  );
-};
+const App: React.FC = () => <Layout />;
 
 export default App;

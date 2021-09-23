@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar, View } from "react-native";
-import GalleryTxt from "../components/GalleryTxt";
-import PhotoAlbum from "../components/PhotoAlbum";
+import GalleryTxt from "../containers/GalleryTxt";
+import PhotoAlbum from "../containers/PhotoAlbum";
 import { appStyles } from "../styles";
 
 const Layout: React.FC = () => {

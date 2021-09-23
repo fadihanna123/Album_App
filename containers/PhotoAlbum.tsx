@@ -1,11 +1,12 @@
+import * as MediaLibrary from "expo-media-library";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
-import { Button, Image, ScrollView, View } from "react-native";
+import { Button, Image, RefreshControl, ScrollView, View } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 import { uid } from "react-uid";
 
-import { showAlbum } from "../functions";
-import { PhotoAlbumStyles } from "../styles/";
+import { showAlbum, wait } from "../functions";
+import { PhotoAlbumStyles } from "../styles";
 import { Props } from "../typings";
 import PhotoItem from "./PhotoItem";
 
@@ -19,13 +20,15 @@ const PhotoAlbum: React.FC<Props> = ({
   setList,
   list,
 }: Props) => {
+  const [refreshing, setRefreshing] = React.useState(false);
+
   const showHomePage = (): void => {
     setView(false);
   };
 
   useEffect(() => {
     showAlbum(
-      setLoading as (loading: boolean | undefined) => {},
+      setLoading as (loading: boolean | undefined) => void,
       setList as (
         list:
           | {
@@ -43,8 +46,29 @@ const PhotoAlbum: React.FC<Props> = ({
     setView: setView,
   };
 
+  const onRefresh = React.useCallback(async (): Promise<void> => {
+    setRefreshing(true);
+
+    const results: any = await MediaLibrary.getAssetsAsync({
+      first: 1000,
+      mediaType: ["photo"],
+      sortBy: ["creationTime"],
+    });
+
+    setList && setList(results);
+
+    setLoading && setLoading(false);
+
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
+
   return (
-    <ScrollView contentContainerStyle={PhotoAlbumStyles.scroll}>
+    <ScrollView
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
+      contentContainerStyle={PhotoAlbumStyles.scroll}
+    >
       {view && !loading ? (
         <View style={PhotoAlbumStyles.imageViewer}>
           <Spinner

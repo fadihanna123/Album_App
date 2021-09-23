@@ -2,7 +2,7 @@ import * as MediaLibrary from "expo-media-library";
 import { Alert } from "react-native";
 
 const showAlbum = async (
-  setLoading: (loading: boolean | undefined) => {},
+  setLoading: (loading: boolean | undefined) => void,
   setList: (
     list:
       | {
@@ -32,7 +32,7 @@ const showAlbum = async (
 
     setLoading && setLoading(false);
   } catch (e) {
-    Alert.alert(e.message);
+    Alert.alert((e as Error).message);
 
     return;
   } finally {

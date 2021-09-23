@@ -1,6 +1,6 @@
 export interface Props {
   loading?: boolean;
-  setLoading?: (loading: boolean) => void;
+  setLoading?: (loading: boolean | undefined) => void;
   photo?: string;
   setPhoto?: (photo: string) => void;
   view?: boolean;

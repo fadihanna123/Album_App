@@ -30,7 +30,6 @@ export default GalleryTxt;
 
 const styles = StyleSheet.create({
   txtBox: {
-    fontFamily: "Courier New",
     borderWidth: 1,
     borderRadius: 10,
     borderColor: "white",

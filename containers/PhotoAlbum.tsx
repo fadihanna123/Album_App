@@ -1,14 +1,14 @@
-import * as MediaLibrary from "expo-media-library";
-import { StatusBar } from "expo-status-bar";
-import React, { useEffect } from "react";
-import { Button, Image, RefreshControl, ScrollView, View } from "react-native";
-import Spinner from "react-native-loading-spinner-overlay";
-import { uid } from "react-uid";
+import * as MediaLibrary from 'expo-media-library';
+import { StatusBar } from 'expo-status-bar';
+import React, { useEffect } from 'react';
+import { Button, Image, RefreshControl, ScrollView, View } from 'react-native';
+import Spinner from 'react-native-loading-spinner-overlay';
+import { uid } from 'react-uid';
 
-import { showAlbum, wait } from "../functions";
-import { PhotoAlbumStyles } from "../styles";
-import { Props } from "../typings";
-import PhotoItem from "./PhotoItem";
+import { showAlbum, wait } from '../functions';
+import { PhotoAlbumStyles } from '../styles';
+import { Props } from '../typings';
+import PhotoItem from './PhotoItem';
 
 const PhotoAlbum: React.FC<Props> = ({
   view,
@@ -59,7 +59,7 @@ const PhotoAlbum: React.FC<Props> = ({
 
     setLoading && setLoading(false);
 
-    wait(2000).then(() => setRefreshing(false));
+    wait(500).then(() => setRefreshing(false));
   }, []);
 
   return (

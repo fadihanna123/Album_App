@@ -1,5 +1,5 @@
-import * as MediaLibrary from "expo-media-library";
-import { Alert } from "react-native";
+import * as MediaLibrary from 'expo-media-library';
+import { Alert } from 'react-native';
 
 const showAlbum = async (
   setLoading: (loading: boolean | undefined) => void,
@@ -20,8 +20,6 @@ const showAlbum = async (
   }
 
   try {
-    setLoading && setLoading(true);
-
     const results: any = await MediaLibrary.getAssetsAsync({
       first: 1000,
       mediaType: ["photo"],
@@ -29,11 +27,8 @@ const showAlbum = async (
     });
 
     setList && setList(results);
-
-    setLoading && setLoading(false);
   } catch (e) {
     Alert.alert((e as Error).message);
-
     return;
   } finally {
     setLoading && setLoading(false);

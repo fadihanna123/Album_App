@@ -20,7 +20,7 @@
     "react-dom": "18.1.0",
     "react-native": "0.68.2",
     "react-native-loading-spinner-overlay": "^3.0.0",
-    "react-native-web": "0.17.7",
+    "react-native-web": "0.18.0",
     "react-uid": "^2.3.2"
   },
   "devDependencies": {

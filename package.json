@@ -24,7 +24,7 @@
     "react-uid": "^2.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
+    "@babel/core": "^7.18.5",
     "@types/react": "~18.0.12",
     "@types/react-dom": "~18.0.5",
     "@types/react-native": "~0.67.8",

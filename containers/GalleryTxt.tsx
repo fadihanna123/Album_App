@@ -1,44 +1,24 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Text } from 'react-native';
+import { useDispatch } from 'react-redux';
 
-import { Props } from "../typings";
+import { showHomePage } from '../functions';
+import { galleryTextStyles } from '../styles';
 
-const GalleryTxt = ({ setView }: Props) => {
-  const showHomePage = (): void => {
-    setView(false);
-  };
+const GalleryTxt = () => {
+  const dispatch = useDispatch();
 
   return (
-    <Text style={styles.txtBox} onPress={showHomePage}>
+    <Text
+      style={galleryTextStyles.txtBox}
+      onPress={() => showHomePage(dispatch)}
+    >
       <Text>Gallery</Text>
-      {"\n"}
-      <Text style={styles.name}>Created by Fadi Hanna</Text>
+      {'\n'}
+      <Text style={galleryTextStyles.name}>
+        Created by Fadi Hanna
+      </Text>
     </Text>
   );
 };
 
-GalleryTxt.propTypes = {
-  setView: PropTypes.func.isRequired,
-};
-
-GalleryTxt.defaultProps = {
-  setView: false,
-};
-
 export default GalleryTxt;
-
-const styles = StyleSheet.create({
-  txtBox: {
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: "white",
-    fontSize: 35,
-    color: "white",
-    textAlign: "center",
-    margin: 10,
-  },
-  name: {
-    fontSize: 20,
-  },
-});

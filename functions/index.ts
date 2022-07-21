@@ -1,2 +1,4 @@
-export * from "./showAlbum";
-export * from "./wait";
+export * from './showAlbum';
+export * from './showHomePage';
+export * from './showSelectedPic';
+export * from './wait';

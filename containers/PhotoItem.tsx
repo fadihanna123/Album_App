@@ -1,44 +1,37 @@
-import React from "react";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import Spinner from "react-native-loading-spinner-overlay";
+import React from 'react';
+import { Image, TouchableOpacity, View } from 'react-native';
+import Spinner from 'react-native-loading-spinner-overlay';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Props } from "../typings";
+import { showSelectedPic } from '../functions';
+import { LoadingReducerTypes } from '../models';
+import { photoItemStyles } from '../styles';
 
-const PhotoItem: React.FC<Props> = ({
-  album,
-  loading,
-  setLoading,
-  setPhoto,
-  setView,
-}: Props) => {
-  const _show = (pic: string) => {
-    setLoading && setLoading(true);
+const PhotoItem: React.FC<any> = ({ album }: any) => {
+  const loading = useSelector(
+    (state: LoadingReducerTypes) => state.loadingReducer
+  );
 
-    setPhoto && setPhoto(pic);
-
-    setView(true);
-
-    setLoading && setLoading(false);
-  };
+  const dispatch = useDispatch();
 
   return (
     <View>
       <Spinner
         visible={loading}
-        textContent={"Loading..."}
-        textStyle={styles.spinnerTextStyle}
-        animation="fade"
-        overlayColor="black"
+        textContent={'Loading...'}
+        textStyle={photoItemStyles.spinnerTextStyle}
+        animation='fade'
+        overlayColor='black'
       />
       <TouchableOpacity
-        onPress={() => _show(album.uri)}
-        style={styles.galleryContainer}
+        onPress={() => showSelectedPic(dispatch, album.uri)}
+        style={photoItemStyles.galleryContainer}
       >
         <Image
           source={{
             uri: album.uri,
           }}
-          style={styles.galleryPhoto}
+          style={photoItemStyles.galleryPhoto}
         />
       </TouchableOpacity>
     </View>
@@ -46,16 +39,3 @@ const PhotoItem: React.FC<Props> = ({
 };
 
 export default PhotoItem;
-
-const styles = StyleSheet.create({
-  galleryContainer: {
-    margin: 4,
-  },
-  galleryPhoto: {
-    width: 85,
-    height: 100,
-  },
-  spinnerTextStyle: {
-    color: "#FFF",
-  },
-});

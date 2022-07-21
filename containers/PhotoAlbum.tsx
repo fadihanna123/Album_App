@@ -3,69 +3,62 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
 import { Button, Image, RefreshControl, ScrollView, View } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
+import { useDispatch, useSelector } from 'react-redux';
 import { uid } from 'react-uid';
 
-import { showAlbum, wait } from '../functions';
+import { showAlbum, showHomePage, wait } from '../functions';
+import { ListReducerTypes, LoadingReducerTypes, PhotoReducerTypes, RefreshReducerTypes, ViewReducerTypes } from '../models';
+import { setList, setLoading, setRefresh } from '../redux/actions';
 import { PhotoAlbumStyles } from '../styles';
-import { Props } from '../typings';
 import PhotoItem from './PhotoItem';
 
-const PhotoAlbum: React.FC<Props> = ({
-  view,
-  loading,
-  setLoading,
-  photo,
-  setPhoto,
-  setView,
-  setList,
-  list,
-}: Props) => {
-  const [refreshing, setRefreshing] = React.useState(false);
+const PhotoAlbum: React.FC = () => {
+  const list = useSelector(
+    (state: ListReducerTypes) => state.listReducer
+  );
 
-  const showHomePage = (): void => {
-    setView(false);
-  };
+  const photo = useSelector(
+    (state: PhotoReducerTypes) => state.photoReducer
+  );
 
-  useEffect(() => {
-    showAlbum(
-      setLoading as (loading: boolean | undefined) => void,
-      setList as (
-        list:
-          | {
-              assets: [{}];
-            }
-          | undefined
-      ) => void | undefined
-    );
-  }, []);
+  const view = useSelector(
+    (state: ViewReducerTypes) => state.viewReducer
+  );
 
-  const props = {
-    loading: loading,
-    setLoading: setLoading,
-    setPhoto: setPhoto,
-    setView: setView,
-  };
+  const loading = useSelector(
+    (state: LoadingReducerTypes) => state.loadingReducer
+  );
+
+  const refresh = useSelector(
+    (state: RefreshReducerTypes) => state.refreshReducer
+  );
+
+  const dispatch = useDispatch();
 
   const onRefresh = React.useCallback(async (): Promise<void> => {
-    setRefreshing(true);
+    dispatch(setRefresh(true));
 
-    const results: any = await MediaLibrary.getAssetsAsync({
+    const results = await MediaLibrary.getAssetsAsync({
       first: 1000,
-      mediaType: ["photo"],
-      sortBy: ["creationTime"],
+      mediaType: ['photo'],
+      sortBy: ['creationTime'],
     });
 
-    setList && setList(results);
+    dispatch(setList(results as any));
 
-    setLoading && setLoading(false);
+    dispatch(setLoading(false));
 
-    wait(500).then(() => setRefreshing(false));
+    wait(500).then(() => dispatch(setRefresh(false)));
+  }, []);
+
+  useEffect(() => {
+    showAlbum(dispatch);
   }, []);
 
   return (
     <ScrollView
       refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        <RefreshControl refreshing={refresh} onRefresh={onRefresh} />
       }
       contentContainerStyle={PhotoAlbumStyles.scroll}
     >
@@ -73,26 +66,30 @@ const PhotoAlbum: React.FC<Props> = ({
         <View style={PhotoAlbumStyles.imageViewer}>
           <Spinner
             visible={loading}
-            textContent={"Loading..."}
+            textContent={'Loading...'}
             textStyle={PhotoAlbumStyles.spinnerTextStyle}
           />
           <Image
             source={{
               uri: photo,
             }}
-            resizeMode="contain"
+            resizeMode='contain'
             style={PhotoAlbumStyles.viewImage}
           />
           <View style={PhotoAlbumStyles.backButton}>
-            <Button color="black" title="Back" onPress={showHomePage}></Button>
+            <Button
+              color='black'
+              title='Back'
+              onPress={() => showHomePage(dispatch)}
+            ></Button>
           </View>
         </View>
       ) : (
-        list?.assets.map((album: any) => (
-          <PhotoItem album={album} key={uid(album)} {...props} />
-        ))
+        list?.assets?.map((album: any) => {
+          return <PhotoItem album={album} key={uid(album)} />;
+        })
       )}
-      <StatusBar style="auto" />
+      <StatusBar style='auto' />
     </ScrollView>
   );
 };

@@ -1,6 +1,13 @@
-import React from "react";
-import Layout from "./app/Layout";
+import React from 'react';
+import { Provider } from 'react-redux';
 
-const App: React.FC = () => <Layout />;
+import Layout from './app/Layout';
+import { store } from './redux/store';
+
+const App: React.FC = () => (
+  <Provider store={store}>
+    <Layout />
+  </Provider>
+);
 
 export default App;

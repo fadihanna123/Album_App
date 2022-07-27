@@ -15,7 +15,7 @@ Happy linting! 💖
 module.exports = {
     env: {
         browser: true,
-        es6: true,
+        es2022: true,
         node: true,
     },
     root: true,
@@ -35,7 +35,8 @@ module.exports = {
         "eslint-plugin-prefer-arrow",
         "@typescript-eslint",
     ],
-    rules: {
+  rules: {
+        '@typescript-eslint/naming-convention': 'error',
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": [
             "error",

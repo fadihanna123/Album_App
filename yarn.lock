@@ -3073,12 +3073,12 @@ expo-asset@~8.6.1:
     path-browserify "^1.0.0"
     url-parse "^1.5.9"
 
-expo-av@~11.2.3:
-  version "11.2.3"
-  resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-11.2.3.tgz#254242dae76e3cd60ef9d9c33618e4a12d37aa33"
-  integrity sha512-ptTe96s33Ct0eOsOmNTvtaWFx4B0SDkQmDfPbiuX/C2afqbLQf8geEopw7BRO8ZZl7Qe3qBMH6YLHXKTkZkTyQ==
+expo-av@~12.0.2:
+  version "12.0.2"
+  resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-12.0.2.tgz#adc9edba78aafc7da0073aac6257e030f573f2c2"
+  integrity sha512-ADOiQXdZCJ+ufxLSjxETmiP740Ur4YWu5lji1YEwYioW8OS5MeJorIyyMSRkS2mZUfWSNi4k2b7SHNe8KQaHyw==
   dependencies:
-    "@expo/config-plugins" "^4.0.14"
+    "@expo/config-plugins" "~5.0.0"
 
 expo-camera@~12.3.0:
   version "12.3.0"

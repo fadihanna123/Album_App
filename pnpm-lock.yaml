@@ -4,9 +4,9 @@ specifiers:
   '@babel/core': ^7.18.6
   '@manypkg/cli': ^0.19.1
   '@react-native-async-storage/async-storage': ~1.17.3
-  '@types/react': ~18.0.0
+  '@types/react': ~18.0.17
   '@types/react-dom': ~18.0.0
-  '@types/react-native': ~0.69.1
+  '@types/react-native': ~0.69.5
   '@types/react-native-loading-spinner-overlay': ^0.5.3
   expo: ~46.0.2
   expo-av: ~12.0.2
@@ -25,13 +25,13 @@ specifiers:
   react-uid: ^2.3.2
   redux: ^4.2.0
   redux-devtools-extension: ^2.13.9
-  typescript: ^4.6.3
+  typescript: ^4.7.4
 
 dependencies:
   '@babel/core': 7.18.10
   '@manypkg/cli': 0.19.1
   '@react-native-async-storage/async-storage': 1.17.7_react-native@0.69.3
-  '@types/react': 18.0.15
+  '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
   '@types/react-native': 0.69.5
   '@types/react-native-loading-spinner-overlay': 0.5.3
@@ -48,8 +48,8 @@ dependencies:
   react-native: 0.69.3_6iplzvqeiudpi4sy52vugn7nxq
   react-native-loading-spinner-overlay: 3.0.1_w3kncuvwqnzhwf3ziybn5l7dja
   react-native-web: 0.18.7_zpnidt7m3osuk7shl3s4oenomq
-  react-redux: 8.0.2_myoenlkbcllw2rz4sqkm5ctlt4
-  react-uid: 2.3.2_mel5u56nhnvuahsnv74k5ge2vu
+  react-redux: 8.0.2_gam22quxbs2b662tkjz25r75x4
+  react-uid: 2.3.2_ieph4hzz3utmkz35okzasneaom
   redux: 4.2.0
   redux-devtools-extension: 2.13.9_redux@4.2.0
   typescript: 4.7.4
@@ -2770,7 +2770,7 @@ packages:
         integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==,
       }
     dependencies:
-      '@types/react': 18.0.15
+      '@types/react': 18.0.17
       hoist-non-react-statics: 3.3.2
     dev: false
 
@@ -2842,7 +2842,7 @@ packages:
         integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==,
       }
     dependencies:
-      '@types/react': 18.0.15
+      '@types/react': 18.0.17
     dev: false
 
   /@types/react-native-loading-spinner-overlay/0.5.3:
@@ -2851,7 +2851,7 @@ packages:
         integrity: sha512-TP6//QhdBEUQT0sB9iG3+a+YKsMzP4/MJNNxSyfWsbdDTbBnO0lD9ksXdwBI5KY91r8gTmBE7PwRS+eEazZpxg==,
       }
     dependencies:
-      '@types/react': 18.0.15
+      '@types/react': 18.0.17
       '@types/react-native': 0.69.5
     dev: false
 
@@ -2861,13 +2861,13 @@ packages:
         integrity: sha512-mSUCuGUsW2kJlZiu4GmdYVDKZX/52iyC9rm6dxAmflJj1b7kSO/CMSDy5WbcfS8QerxTqbYGTrIwHD0GnXHzbQ==,
       }
     dependencies:
-      '@types/react': 18.0.15
+      '@types/react': 18.0.17
     dev: false
 
-  /@types/react/18.0.15:
+  /@types/react/18.0.17:
     resolution:
       {
-        integrity: sha512-iz3BtLuIYH1uWdsv6wXYdhozhqj20oD4/Hk2DNXIn1kFsmp9x8d9QB6FnPhfkbhd2PgEONt9Q1x/ebkwjfFLow==,
+        integrity: sha512-38ETy4tL+rn4uQQi7mB81G7V1g0u2ryquNmsVIOKUAEIDK+3CUjZ6rSRpdvS99dNBnkLFL83qfmtLacGOTIhwQ==,
       }
     dependencies:
       '@types/prop-types': 15.7.5
@@ -8520,7 +8520,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /react-redux/8.0.2_myoenlkbcllw2rz4sqkm5ctlt4:
+  /react-redux/8.0.2_gam22quxbs2b662tkjz25r75x4:
     resolution:
       {
         integrity: sha512-nBwiscMw3NoP59NFCXFf02f8xdo+vSHT/uZ1ldDwF7XaTpzm+Phk97VT4urYBl5TYAPNVaFm12UHAEyzkpNzRA==,
@@ -8546,7 +8546,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.0.15
+      '@types/react': 18.0.17
       '@types/react-dom': 18.0.6
       '@types/use-sync-external-store': 0.0.3
       hoist-non-react-statics: 3.3.2
@@ -8579,7 +8579,7 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /react-uid/2.3.2_mel5u56nhnvuahsnv74k5ge2vu:
+  /react-uid/2.3.2_ieph4hzz3utmkz35okzasneaom:
     resolution:
       {
         integrity: sha512-oeaoT4YOjsqHdrEJoO8SONNNBsoGh7AJPbsNqRK6Dv8UMdctWxA4ncj9gAA/Odki5g0GZaDSR7HydBJ8HxwgNg==,
@@ -8592,7 +8592,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 18.0.15
+      '@types/react': 18.0.17
       react: 18.0.0
       tslib: 2.4.0
     dev: false

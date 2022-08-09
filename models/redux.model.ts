@@ -3,7 +3,9 @@ export class ActionTypes {
 }
 
 export class ListReducerTypes {
-  constructor(public listReducer: { assets: [{}] }) {}
+  constructor(
+    public listReducer: { assets: [Record<string, never>] }
+  ) {}
 }
 
 export class LoadingReducerTypes {

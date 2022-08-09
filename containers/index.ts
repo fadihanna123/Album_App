@@ -1,3 +1,3 @@
-export * from "./GalleryTxt";
-export * from "./PhotoAlbum";
-export * from "./PhotoItem";
+export * from './GalleryTxt';
+export * from './PhotoAlbum';
+export * from './PhotoItem';

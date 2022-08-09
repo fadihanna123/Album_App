@@ -1,12 +1,20 @@
 import { AnyAction } from 'redux';
 
-import { SET_LIST, SET_LOADING, SET_PHOTO, SET_REFRESH, SET_VIEW } from '../../utils/constants';
+import {
+  SET_LIST,
+  SET_LOADING,
+  SET_PHOTO,
+  SET_REFRESH,
+  SET_VIEW,
+} from '../../utils/constants';
 
 export const setPhoto = (payload: string): AnyAction => {
   return { type: SET_PHOTO, payload };
 };
 
-export const setList = (payload: { assets: [{}] }) => {
+export const setList = (payload: {
+  assets: [Record<string, never>];
+}) => {
   return { type: SET_LIST, payload };
 };
 

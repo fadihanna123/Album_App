@@ -1,7 +1,7 @@
 import { ActionTypes } from '../../models/redux.model';
 import { SET_LIST } from '../../utils/constants';
 
-const initialState = {} as { assets: [{}] };
+const initialState = {} as { assets: [Record<string, never>] };
 
 export const listReducer = (
   state = initialState,

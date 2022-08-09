@@ -18,7 +18,7 @@ specifiers:
   prettier: ^2.7.1
   react: 18.0.0
   react-dom: 18.0.0
-  react-native: 0.69.3
+  react-native: 0.69.4
   react-native-loading-spinner-overlay: ^3.0.1
   react-native-web: ~0.18.7
   react-redux: ^8.0.2
@@ -30,7 +30,7 @@ specifiers:
 dependencies:
   '@babel/core': 7.18.10
   '@manypkg/cli': 0.19.1
-  '@react-native-async-storage/async-storage': 1.17.7_react-native@0.69.3
+  '@react-native-async-storage/async-storage': 1.17.7_react-native@0.69.4
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
   '@types/react-native': 0.69.5
@@ -45,10 +45,10 @@ dependencies:
   prettier: 2.7.1
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
-  react-native: 0.69.3_6iplzvqeiudpi4sy52vugn7nxq
-  react-native-loading-spinner-overlay: 3.0.1_w3kncuvwqnzhwf3ziybn5l7dja
+  react-native: 0.69.4_6iplzvqeiudpi4sy52vugn7nxq
+  react-native-loading-spinner-overlay: 3.0.1_jk6ntyzimkrv4hwdmdgaaf5yaa
   react-native-web: 0.18.7_zpnidt7m3osuk7shl3s4oenomq
-  react-redux: 8.0.2_gam22quxbs2b662tkjz25r75x4
+  react-redux: 8.0.2_dr6hgadteqsg2vegpo4xdemohe
   react-uid: 2.3.2_ieph4hzz3utmkz35okzasneaom
   redux: 4.2.0
   redux-devtools-extension: 2.13.9_redux@4.2.0
@@ -2431,7 +2431,7 @@ packages:
       rimraf: 3.0.2
     dev: false
 
-  /@react-native-async-storage/async-storage/1.17.7_react-native@0.69.3:
+  /@react-native-async-storage/async-storage/1.17.7_react-native@0.69.4:
     resolution:
       {
         integrity: sha512-mDtWhCcpxzrZhA95f6zi0pnBsjBEZW1LKZWfxVXG0UfaWpPxDBCKowNk2xjRTytckZeVhjmPJPtBU+8QNQcR0A==,
@@ -2440,7 +2440,7 @@ packages:
       react-native: ^0.0.0-0 || 0.60 - 0.69 || 1000.0.0
     dependencies:
       merge-options: 3.0.4
-      react-native: 0.69.3_6iplzvqeiudpi4sy52vugn7nxq
+      react-native: 0.69.4_6iplzvqeiudpi4sy52vugn7nxq
     dev: false
 
   /@react-native-community/cli-clean/8.0.4:
@@ -2635,7 +2635,7 @@ packages:
       joi: 17.6.0
     dev: false
 
-  /@react-native-community/cli/8.0.5_react-native@0.69.3:
+  /@react-native-community/cli/8.0.5_react-native@0.69.4:
     resolution:
       {
         integrity: sha512-X0AMNK+sKDJQX8eQRkqgddJsZPWlHgLryX7O9usj78UFEK8VqVYtpv08piWecfAhC2mZU4/Lww4bKu9uJ1rdyQ==,
@@ -2664,7 +2664,7 @@ packages:
       lodash: 4.17.21
       minimist: 1.2.6
       prompts: 2.4.2
-      react-native: 0.69.3_6iplzvqeiudpi4sy52vugn7nxq
+      react-native: 0.69.4_6iplzvqeiudpi4sy52vugn7nxq
       semver: 6.3.0
     transitivePeerDependencies:
       - bufferutil
@@ -8433,7 +8433,7 @@ packages:
       }
     dev: false
 
-  /react-native-loading-spinner-overlay/3.0.1_w3kncuvwqnzhwf3ziybn5l7dja:
+  /react-native-loading-spinner-overlay/3.0.1_jk6ntyzimkrv4hwdmdgaaf5yaa:
     resolution:
       {
         integrity: sha512-4GdR54HQnKg2HPSSisVizfTLuyhSh4splY9eb8mKiYF1Ihjn/5EmdNo5bN3S7uKPFRC3WLzIZIouX6G6fXfnjw==,
@@ -8443,7 +8443,7 @@ packages:
       react-native: '*'
     dependencies:
       react: 18.0.0
-      react-native: 0.69.3_6iplzvqeiudpi4sy52vugn7nxq
+      react-native: 0.69.4_6iplzvqeiudpi4sy52vugn7nxq
     dev: false
 
   /react-native-web/0.18.7_zpnidt7m3osuk7shl3s4oenomq:
@@ -8468,10 +8468,10 @@ packages:
       - encoding
     dev: false
 
-  /react-native/0.69.3_6iplzvqeiudpi4sy52vugn7nxq:
+  /react-native/0.69.4_6iplzvqeiudpi4sy52vugn7nxq:
     resolution:
       {
-        integrity: sha512-SyGkcoEUa/BkO+wKVnv4OsnLSNfUM5zLNXS3iT/3eXjKX91/FKBH/nfR9BE1c60X5LQe/P5QYqr6WPX3TRSQkA==,
+        integrity: sha512-rqNMialM/T4pHRKWqTIpOxA65B/9kUjtnepxwJqvsdCeMP9Q2YdSx4VASFR9RoEFYcPRU41yGf6EKrChNfns3g==,
       }
     engines: { node: '>=14' }
     hasBin: true
@@ -8479,7 +8479,7 @@ packages:
       react: 18.0.0
     dependencies:
       '@jest/create-cache-key-function': 27.5.1
-      '@react-native-community/cli': 8.0.5_react-native@0.69.3
+      '@react-native-community/cli': 8.0.5_react-native@0.69.4
       '@react-native-community/cli-platform-android': 8.0.5
       '@react-native-community/cli-platform-ios': 8.0.4
       '@react-native/assets': 1.0.0
@@ -8520,7 +8520,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /react-redux/8.0.2_gam22quxbs2b662tkjz25r75x4:
+  /react-redux/8.0.2_dr6hgadteqsg2vegpo4xdemohe:
     resolution:
       {
         integrity: sha512-nBwiscMw3NoP59NFCXFf02f8xdo+vSHT/uZ1ldDwF7XaTpzm+Phk97VT4urYBl5TYAPNVaFm12UHAEyzkpNzRA==,
@@ -8553,7 +8553,7 @@ packages:
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
       react-is: 18.2.0
-      react-native: 0.69.3_6iplzvqeiudpi4sy52vugn7nxq
+      react-native: 0.69.4_6iplzvqeiudpi4sy52vugn7nxq
       redux: 4.2.0
       use-sync-external-store: 1.2.0_react@18.0.0
     dev: false

@@ -4,11 +4,16 @@
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
   },
+  "bugs": "https://github.com/fadihanna123/Album_App/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fadihanna123/Album_App"
+  },
   "license": "MIT",
   "version": "0.0.7",
   "lastUpgrade": "20220801",
   "scripts": {
-    "start": "expo start --dev-client",
+    "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
@@ -29,8 +34,9 @@
     "eslint-plugin-jsdoc": "^39.3.3",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "expo": "~46.0.2",
-    "expo-av": "~12.0.2",
+    "expo-av": "~12.0.3",
     "expo-camera": "~12.3.0",
+    "expo-dev-client": "^1.1.1",
     "expo-media-library": "~14.2.0",
     "expo-splash-screen": "~0.16.1",
     "expo-status-bar": "~1.4.0",

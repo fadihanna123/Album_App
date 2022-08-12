@@ -1,13 +1,25 @@
 import * as MediaLibrary from 'expo-media-library';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import { Button, Image, RefreshControl, ScrollView, View } from 'react-native';
+import {
+  Button,
+  Image,
+  RefreshControl,
+  ScrollView,
+  View,
+} from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { useDispatch, useSelector } from 'react-redux';
 import { uid } from 'react-uid';
 
 import { showAlbum, showHomePage, wait } from '../functions';
-import { ListReducerTypes, LoadingReducerTypes, PhotoReducerTypes, RefreshReducerTypes, ViewReducerTypes } from '../models';
+import {
+  ListReducerTypes,
+  LoadingReducerTypes,
+  PhotoReducerTypes,
+  RefreshReducerTypes,
+  ViewReducerTypes,
+} from '../models';
 import { setList, setLoading, setRefresh } from '../redux/actions';
 import { PhotoAlbumStyles } from '../styles';
 import PhotoItem from './PhotoItem';

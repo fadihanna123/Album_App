@@ -5,5 +5,4 @@ pnpm i
 eslint .
 pnpm manypkg check
 npx pretty-quick --staged
-eclint fix
 rimraf node_modules

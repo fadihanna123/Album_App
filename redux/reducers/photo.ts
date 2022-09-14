@@ -3,6 +3,14 @@ import { SET_PHOTO } from '../../utils/constants';
 
 const initialState: string = '';
 
+/**
+ * Photo reducer.
+ *
+ * @param state
+ * @param param1
+ * @returns String.
+ */
+
 export const photoReducer = (
   state = initialState,
   { type, payload }: ActionTypes

@@ -4,9 +4,14 @@ import { Dispatch } from 'redux';
 
 import { setList, setLoading } from '../redux/actions';
 
-export const showAlbum = async (
-  dispatch: Dispatch<any>
-): Promise<void> => {
+/**
+ * Show photos album.
+ *
+ * @param dispatch
+ * @returns Promise.
+ */
+
+export const showAlbum = async (dispatch: Dispatch<any>): Promise<void> => {
   await MediaLibrary.requestPermissionsAsync();
   const { status } = await MediaLibrary.getPermissionsAsync();
 

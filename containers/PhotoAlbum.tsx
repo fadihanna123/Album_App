@@ -1,13 +1,7 @@
 import * as MediaLibrary from 'expo-media-library';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import {
-  Button,
-  Image,
-  RefreshControl,
-  ScrollView,
-  View,
-} from 'react-native';
+import { Button, Image, RefreshControl, ScrollView, View } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { useDispatch, useSelector } from 'react-redux';
 import { uid } from 'react-uid';
@@ -25,17 +19,11 @@ import { PhotoAlbumStyles } from '../styles';
 import PhotoItem from './PhotoItem';
 
 const PhotoAlbum: React.FC = () => {
-  const list = useSelector(
-    (state: ListReducerTypes) => state.listReducer
-  );
+  const list = useSelector((state: ListReducerTypes) => state.listReducer);
 
-  const photo = useSelector(
-    (state: PhotoReducerTypes) => state.photoReducer
-  );
+  const photo = useSelector((state: PhotoReducerTypes) => state.photoReducer);
 
-  const view = useSelector(
-    (state: ViewReducerTypes) => state.viewReducer
-  );
+  const view = useSelector((state: ViewReducerTypes) => state.viewReducer);
 
   const loading = useSelector(
     (state: LoadingReducerTypes) => state.loadingReducer
@@ -46,6 +34,10 @@ const PhotoAlbum: React.FC = () => {
   );
 
   const dispatch = useDispatch();
+
+  /**
+   * Handle refresh images list.
+   */
 
   const onRefresh = React.useCallback(async (): Promise<void> => {
     dispatch(setRefresh(true));

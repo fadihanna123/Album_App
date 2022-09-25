@@ -23,10 +23,10 @@
     "@babel/core": "^7.18.13",
     "@babel/runtime": "^7.18.9",
     "@manypkg/cli": "^0.19.1",
-    "@react-native-async-storage/async-storage": "~1.17.10",
-    "@types/react": "~18.0.18",
-    "@types/react-dom": "~18.0.6",
-    "@types/react-native": "~0.69.6",
+    "@react-native-async-storage/async-storage": "~1.17.3",
+    "@types/react": "~18.0.17",
+    "@types/react-dom": "~18.0.0",
+    "@types/react-native": "~0.69.1",
     "@types/react-native-loading-spinner-overlay": "^0.5.3",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
@@ -59,7 +59,6 @@
   },
   "engines": {
     "node": ">=14.12.0",
-    "npm": "Please use Yarn instead of NPM to install dependencies",
-    "pnpm": "Please use Yarn instead of PNPM to install dependencies"
+    "npm": "Please use Yarn instead of NPM to install dependencies"
   }
 }

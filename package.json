@@ -10,7 +10,7 @@
     "url": "https://github.com/fadihanna123/Album_App"
   },
   "license": "MIT",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "lastUpgrade": "20220903",
   "scripts": {
     "start": "expo start --tunnel",
@@ -59,7 +59,7 @@
   },
   "engines": {
     "node": ">=14.12.0",
-    "npm": "Please use pnpm instead of NPM to install dependencies",
-    "yarn": "Please use pnpm instead of Yarn to install dependencies"
+    "npm": "Please use Yarn instead of NPM to install dependencies",
+    "pnpm": "Please use Yarn instead of PNPM to install dependencies"
   }
 }

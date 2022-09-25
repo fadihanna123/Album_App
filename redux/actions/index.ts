@@ -1,23 +1,13 @@
 import { AnyAction } from 'redux';
 
+import { Album } from '../../models';
 import {
   SET_LIST,
   SET_LOADING,
-  SET_PHOTO,
   SET_REFRESH,
+  SET_SELECTED_PHOTO,
   SET_VIEW,
 } from '../../utils/constants';
-
-/**
- * Photo action.
- *
- * @param payload
- * @returns AnyAction.
- */
-
-export const setPhoto = (payload: string): AnyAction => {
-  return { type: SET_PHOTO, payload };
-};
 
 /**
  * List action.
@@ -61,4 +51,15 @@ export const setView = (payload: boolean): AnyAction => {
 
 export const setRefresh = (payload: boolean): AnyAction => {
   return { type: SET_REFRESH, payload };
+};
+
+/**
+ * SelectedPhoto action.
+ *
+ * @param payload - Album object
+ * @returns AnyAction
+ */
+
+export const setSelectedPhoto = (payload: Album): AnyAction => {
+  return { type: SET_SELECTED_PHOTO, payload };
 };

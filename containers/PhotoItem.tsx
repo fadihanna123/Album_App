@@ -4,10 +4,10 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showSelectedPic } from '../functions';
-import { LoadingReducerTypes } from '../models';
+import { Album, LoadingReducerTypes } from '../models';
 import { photoItemStyles } from '../styles';
 
-const PhotoItem: React.FC<any> = ({ album }: any) => {
+const PhotoItem: React.FC<{ album: Album }> = ({ album }: { album: Album }) => {
   const loading = useSelector(
     (state: LoadingReducerTypes) => state.loadingReducer
   );
@@ -24,7 +24,7 @@ const PhotoItem: React.FC<any> = ({ album }: any) => {
         overlayColor='black'
       />
       <TouchableOpacity
-        onPress={() => showSelectedPic(dispatch, album.uri)}
+        onPress={() => showSelectedPic(dispatch, album)}
         style={photoItemStyles.galleryContainer}
       >
         <Image

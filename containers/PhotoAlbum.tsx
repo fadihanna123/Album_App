@@ -1,27 +1,32 @@
 import * as MediaLibrary from 'expo-media-library';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import { Button, Image, RefreshControl, ScrollView, View } from 'react-native';
+import {
+  Button,
+  Image,
+  RefreshControl,
+  ScrollView,
+  Text,
+  View,
+} from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { useDispatch, useSelector } from 'react-redux';
 import { uid } from 'react-uid';
 
-import { showAlbum, showHomePage, wait } from '../functions';
+import { convertUnixToTime, showAlbum, showHomePage, wait } from '../functions';
 import {
   ListReducerTypes,
   LoadingReducerTypes,
-  PhotoReducerTypes,
   RefreshReducerTypes,
+  SelectedPhotoReducerTypes,
   ViewReducerTypes,
 } from '../models';
 import { setList, setLoading, setRefresh } from '../redux/actions';
-import { PhotoAlbumStyles } from '../styles';
+import { PhotoAlbumStyles, selectedPhotoInfoStyles } from '../styles';
 import PhotoItem from './PhotoItem';
 
 const PhotoAlbum: React.FC = () => {
   const list = useSelector((state: ListReducerTypes) => state.listReducer);
-
-  const photo = useSelector((state: PhotoReducerTypes) => state.photoReducer);
 
   const view = useSelector((state: ViewReducerTypes) => state.viewReducer);
 
@@ -33,10 +38,16 @@ const PhotoAlbum: React.FC = () => {
     (state: RefreshReducerTypes) => state.refreshReducer
   );
 
+  const selectedPhoto = useSelector(
+    (state: SelectedPhotoReducerTypes) => state.selectedPhotoReducer
+  );
+
   const dispatch = useDispatch();
 
   /**
    * Handle refresh images list.
+   *
+   * @returns Promise
    */
 
   const onRefresh = React.useCallback(async (): Promise<void> => {
@@ -75,23 +86,42 @@ const PhotoAlbum: React.FC = () => {
           />
           <Image
             source={{
-              uri: photo,
+              uri: selectedPhoto.uri,
             }}
-            resizeMode='contain'
+            resizeMode='stretch'
             style={PhotoAlbumStyles.viewImage}
           />
           <View style={PhotoAlbumStyles.backButton}>
             <Button
-              color='black'
+              color='#000'
               title='Back'
               onPress={() => showHomePage(dispatch)}
             ></Button>
           </View>
+          <Text style={selectedPhotoInfoStyles.textContainer}>
+            <Text style={selectedPhotoInfoStyles.fileInfoHeading}>
+              File Info: {'\n'}
+            </Text>
+            Created at:
+            {' ' + convertUnixToTime(selectedPhoto.creationTime)}
+            {'\n'}
+            Filename: {selectedPhoto.filename} {'\n'}
+            Height: {selectedPhoto.height} {'\n'}
+            Id: {selectedPhoto.id} {'\n'}
+            MediaType:{' '}
+            {selectedPhoto.mediaType.charAt(0).toUpperCase() +
+              selectedPhoto.mediaType.slice(1)}{' '}
+            {'\n'}
+            ModificationTime:{' '}
+            {convertUnixToTime(selectedPhoto.modificationTime)} {'\n'}
+            Url: {selectedPhoto.uri} {'\n'}
+            Width: {selectedPhoto.width} {'\n'}
+          </Text>
         </View>
       ) : (
-        list?.assets?.map((album: any) => {
-          return <PhotoItem album={album} key={uid(album)} />;
-        })
+        list?.assets?.map((album: any) => (
+          <PhotoItem album={album} key={uid(album)} />
+        ))
       )}
       <StatusBar style='auto' />
     </ScrollView>

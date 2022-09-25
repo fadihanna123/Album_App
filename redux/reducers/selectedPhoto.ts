@@ -1,7 +1,8 @@
+import { Album } from '../../models';
 import { ActionTypes } from '../../models/redux.model';
-import { SET_PHOTO } from '../../utils/constants';
+import { SET_SELECTED_PHOTO } from '../../utils/constants';
 
-const initialState: string = '';
+const initialState: Album | null = null;
 
 /**
  * Photo reducer.
@@ -11,12 +12,12 @@ const initialState: string = '';
  * @returns String.
  */
 
-export const photoReducer = (
+export const selectedPhotoReducer = (
   state = initialState,
   { type, payload }: ActionTypes
 ) => {
   switch (type) {
-    case SET_PHOTO:
+    case SET_SELECTED_PHOTO:
       return payload;
 
     default:

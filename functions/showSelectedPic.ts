@@ -1,17 +1,21 @@
 import { Dispatch } from 'redux';
 
-import { setLoading, setPhoto, setView } from '../redux/actions';
+import { Album } from '../models';
+import { setLoading, setSelectedPhoto, setView } from '../redux/actions';
 
 /**
  * Show the selected picture.
  *
- * @param dispatch
- * @param pic
+ * @param dispatch - Dispatch
+ * @param selectedPhoto - Selected photo
  */
 
-export const showSelectedPic = (dispatch: Dispatch<any>, pic: string) => {
+export const showSelectedPic = (
+  dispatch: Dispatch<any>,
+  selectedPhoto: Album
+) => {
   dispatch(setLoading(true));
-  dispatch(setPhoto(pic));
+  dispatch(setSelectedPhoto(selectedPhoto));
   dispatch(setView(true));
   dispatch(setLoading(false));
 };

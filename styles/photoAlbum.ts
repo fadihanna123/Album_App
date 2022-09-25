@@ -11,12 +11,14 @@ export const PhotoAlbumStyles = StyleSheet.create({
   },
   viewImage: {
     width: '100%',
-    height: '85%',
+    height: '50%',
     borderWidth: 1,
+    padding: 10,
   },
   backButton: {
     width: '100%',
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
+    marginTop: 10,
   },
   galleryContainer: {
     margin: 4,

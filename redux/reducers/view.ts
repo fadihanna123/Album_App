@@ -1,25 +1,19 @@
-import { ActionTypes } from '../../models';
-import { SET_VIEW } from '../../utils/constants';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { RootState } from '../app';
 
 const initialState: boolean = false;
 
-/**
- * View reducer.
- *
- * @param state
- * @param param1
- * @returns Boolean.
- */
+export const viewSlice = createSlice({
+  name: 'view',
+  initialState,
+  reducers: {
+    setView: (state, action: PayloadAction<boolean>) => {
+      return (state = action.payload);
+    },
+  },
+});
 
-export const viewReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_VIEW:
-      return payload;
-
-    default:
-      return state;
-  }
-};
+export const { setView } = viewSlice.actions;
+export default viewSlice.reducer;
+export const getView = (state: RootState) => state.view;

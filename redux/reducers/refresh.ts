@@ -1,25 +1,19 @@
-import { ActionTypes } from '../../models/redux.model';
-import { SET_REFRESH } from '../../utils/constants';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { RootState } from '../app';
 
 const initialState: boolean = false;
 
-/**
- * Refresh reducer.
- *
- * @param state
- * @param param1
- * @returns Boolean.
- */
+export const refreshSlice = createSlice({
+  name: 'refresh',
+  initialState,
+  reducers: {
+    setRefresh: (state, action: PayloadAction<boolean>) => {
+      return (state = action.payload);
+    },
+  },
+});
 
-export const refreshReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_REFRESH:
-      return payload;
-
-    default:
-      return state;
-  }
-};
+export const { setRefresh } = refreshSlice.actions;
+export default refreshSlice.reducer;
+export const getRefresh = (state: RootState) => state.refresh;

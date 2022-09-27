@@ -1,11 +1,11 @@
 import { Text } from 'react-native';
-import { useDispatch } from 'react-redux';
 
 import { showHomePage } from '../functions';
+import { useAppDispatch } from '../redux/app';
 import { galleryTextStyles } from '../styles';
 
 const GalleryTxt = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <Text
@@ -14,9 +14,7 @@ const GalleryTxt = () => {
     >
       <Text>Gallery</Text>
       {'\n'}
-      <Text style={galleryTextStyles.name}>
-        Created by Fadi Hanna
-      </Text>
+      <Text style={galleryTextStyles.name}>Created by Fadi Hanna</Text>
     </Text>
   );
 };

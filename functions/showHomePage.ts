@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 
-import { setView } from '../redux/actions';
+import { setView } from '../redux/reducers';
 
 /**
  * Back to homepage.

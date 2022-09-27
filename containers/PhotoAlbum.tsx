@@ -10,39 +10,35 @@ import {
   View,
 } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
-import { useDispatch, useSelector } from 'react-redux';
 import { uid } from 'react-uid';
 
 import { convertUnixToTime, showAlbum, showHomePage, wait } from '../functions';
+import { useAppDispatch, useAppSelector } from '../redux/app';
 import {
-  ListReducerTypes,
-  LoadingReducerTypes,
-  RefreshReducerTypes,
-  SelectedPhotoReducerTypes,
-  ViewReducerTypes,
-} from '../models';
-import { setList, setLoading, setRefresh } from '../redux/actions';
+  getList,
+  getLoading,
+  getRefresh,
+  getSelectedPhoto,
+  getView,
+  setList,
+  setLoading,
+  setRefresh,
+} from '../redux/reducers';
 import { PhotoAlbumStyles, selectedPhotoInfoStyles } from '../styles';
 import PhotoItem from './PhotoItem';
 
 const PhotoAlbum: React.FC = () => {
-  const list = useSelector((state: ListReducerTypes) => state.listReducer);
+  const list = useAppSelector(getList);
 
-  const view = useSelector((state: ViewReducerTypes) => state.viewReducer);
+  const view = useAppSelector(getView);
 
-  const loading = useSelector(
-    (state: LoadingReducerTypes) => state.loadingReducer
-  );
+  const loading = useAppSelector(getLoading);
 
-  const refresh = useSelector(
-    (state: RefreshReducerTypes) => state.refreshReducer
-  );
+  const refresh = useAppSelector(getRefresh);
 
-  const selectedPhoto = useSelector(
-    (state: SelectedPhotoReducerTypes) => state.selectedPhotoReducer
-  );
+  const selectedPhoto = useAppSelector(getSelectedPhoto);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   /**
    * Handle refresh images list.
@@ -86,7 +82,7 @@ const PhotoAlbum: React.FC = () => {
           />
           <Image
             source={{
-              uri: selectedPhoto.uri,
+              uri: selectedPhoto?.uri,
             }}
             resizeMode='stretch'
             style={PhotoAlbumStyles.viewImage}
@@ -103,19 +99,19 @@ const PhotoAlbum: React.FC = () => {
               File Info: {'\n'}
             </Text>
             Created at:
-            {' ' + convertUnixToTime(selectedPhoto.creationTime)}
+            {' ' + convertUnixToTime(selectedPhoto!.creationTime)}
             {'\n'}
-            Filename: {selectedPhoto.filename} {'\n'}
-            Height: {selectedPhoto.height} {'\n'}
-            Id: {selectedPhoto.id} {'\n'}
+            Filename: {selectedPhoto!.filename} {'\n'}
+            Height: {selectedPhoto!.height} {'\n'}
+            Id: {selectedPhoto!.id} {'\n'}
             MediaType:{' '}
-            {selectedPhoto.mediaType.charAt(0).toUpperCase() +
-              selectedPhoto.mediaType.slice(1)}{' '}
+            {selectedPhoto!.mediaType.charAt(0).toUpperCase() +
+              selectedPhoto!.mediaType.slice(1)}{' '}
             {'\n'}
             ModificationTime:{' '}
-            {convertUnixToTime(selectedPhoto.modificationTime)} {'\n'}
-            Url: {selectedPhoto.uri} {'\n'}
-            Width: {selectedPhoto.width} {'\n'}
+            {convertUnixToTime(selectedPhoto!.modificationTime)} {'\n'}
+            Url: {selectedPhoto!.uri} {'\n'}
+            Width: {selectedPhoto!.width} {'\n'}
           </Text>
         </View>
       ) : (

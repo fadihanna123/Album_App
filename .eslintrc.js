@@ -139,6 +139,7 @@ module.exports = {
       },
     ],
     'no-eval': 'error',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     'no-fallthrough': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
     'no-invalid-this': 'off',

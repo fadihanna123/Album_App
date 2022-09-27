@@ -1,18 +1,17 @@
 import React from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
-import { useDispatch, useSelector } from 'react-redux';
 
 import { showSelectedPic } from '../functions';
-import { Album, LoadingReducerTypes } from '../models';
+import { Album } from '../models';
+import { useAppDispatch, useAppSelector } from '../redux/app';
+import { getLoading } from '../redux/reducers';
 import { photoItemStyles } from '../styles';
 
 const PhotoItem: React.FC<{ album: Album }> = ({ album }: { album: Album }) => {
-  const loading = useSelector(
-    (state: LoadingReducerTypes) => state.loadingReducer
-  );
+  const loading = useAppSelector(getLoading);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <View>

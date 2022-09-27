@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux';
 
 import { Album } from '../models';
-import { setLoading, setSelectedPhoto, setView } from '../redux/actions';
+import { setLoading, setSelectedPhoto, setView } from '../redux/reducers';
 
 /**
  * Show the selected picture.

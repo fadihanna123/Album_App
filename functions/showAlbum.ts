@@ -2,7 +2,7 @@ import * as MediaLibrary from 'expo-media-library';
 import { Alert } from 'react-native';
 import { Dispatch } from 'redux';
 
-import { setList, setLoading } from '../redux/actions';
+import { setList, setLoading } from '../redux/reducers';
 
 /**
  * Show photos album.

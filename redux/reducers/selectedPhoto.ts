@@ -1,26 +1,20 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { Album } from '../../models';
-import { ActionTypes } from '../../models/redux.model';
-import { SET_SELECTED_PHOTO } from '../../utils/constants';
+import { RootState } from '../app';
 
-const initialState: Album | null = null;
+const initialState = {} as Album | null;
 
-/**
- * Photo reducer.
- *
- * @param state
- * @param param1
- * @returns String.
- */
+export const selectedPhotoSlice = createSlice({
+  name: 'selectedPhoto',
+  initialState,
+  reducers: {
+    setSelectedPhoto: (state, action: PayloadAction<Album | null>) => {
+      return (state = action.payload);
+    },
+  },
+});
 
-export const selectedPhotoReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_SELECTED_PHOTO:
-      return payload;
-
-    default:
-      return state;
-  }
-};
+export const { setSelectedPhoto } = selectedPhotoSlice.actions;
+export default selectedPhotoSlice.reducer;
+export const getSelectedPhoto = (state: RootState) => state.selectedPhoto;

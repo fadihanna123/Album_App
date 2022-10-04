@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Album App 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.10-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.11-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/node-%3E%3D14.12.0-blue.svg" />
   <img src="https://img.shields.io/badge/npm-Please%20use%20Yarn%20instead%20of%20NPM%20to%20install%20dependencies-blue.svg" />
   <a href="https://github.com/fadihanna123/Album_App#readme" target="_blank">
@@ -20,6 +20,7 @@
 
 - Node >=14.12.0
 - Npm Please use Yarn instead of NPM to install dependencies
+
 
 ## Install
 

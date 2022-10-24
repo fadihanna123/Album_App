@@ -30,7 +30,7 @@
     "@types/react-native": "~0.69.1",
     "@types/react-native-loading-spinner-overlay": "^0.5.3",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.0",
+    "@typescript-eslint/parser": "^5.41.0",
     "babel-plugin-inline-dotenv": "^1.7.0",
     "eslint": "^8.25.0",
     "eslint-plugin-import": "^2.26.0",

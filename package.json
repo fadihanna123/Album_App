@@ -28,7 +28,7 @@
     "@types/react-dom": "~18.0.9",
     "@types/react-native": "~0.70.7",
     "@types/react-native-loading-spinner-overlay": "^0.5.3",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.45.0",
     "babel-plugin-inline-dotenv": "^1.7.0",
     "eslint": "^8.28.0",

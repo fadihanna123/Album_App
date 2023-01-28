@@ -7,10 +7,11 @@ import { setList, setLoading } from '../redux/reducers';
 /**
  * Show photos album.
  *
- * @param dispatch
- * @returns Promise.
+ * @function showAlbum
+ * @async
+ * @param { Dispatch<any> } dispatch
+ * @returns { Promise<void> } Promise.
  */
-
 export const showAlbum = async (dispatch: Dispatch<any>): Promise<void> => {
   await MediaLibrary.requestPermissionsAsync();
   const { status } = await MediaLibrary.getPermissionsAsync();

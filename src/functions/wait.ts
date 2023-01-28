@@ -1,10 +1,9 @@
 /**
  * Wait a promise.
  *
- * @param timeout
- * @returns any.
+ * @function wait
+ * @param { number } timeout
+ * @returns { any } any.
  */
-
-export const wait = (timeout: number): any => {
-  return new Promise((resolve) => setTimeout(resolve, timeout));
-};
+export const wait = (timeout: number): any =>
+  new Promise((resolve) => setTimeout(resolve, timeout));

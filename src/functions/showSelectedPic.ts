@@ -1,3 +1,4 @@
+import * as Haptics from 'expo-haptics';
 import { Dispatch } from 'redux';
 
 import { Album } from '../models';
@@ -6,10 +7,10 @@ import { setLoading, setSelectedPhoto, setView } from '../redux/reducers';
 /**
  * Show the selected picture.
  *
- * @param dispatch - Dispatch
- * @param selectedPhoto - Selected photo
+ * @function showSelectedPic
+ * @param { Dispatch<any> } dispatch - Dispatch
+ * @param { void } selectedPhoto - Selected photo
  */
-
 export const showSelectedPic = (
   dispatch: Dispatch<any>,
   selectedPhoto: Album

@@ -5,9 +5,10 @@ import { setView } from '../redux/reducers';
 /**
  * Back to homepage.
  *
- * @param dispatch
- * @returns AnyAction.
+ * @function showHomePage
+ * @param { Dispatch<any> } dispatch
+ * @returns { object } AnyAction.
  */
 
-export const showHomePage = (dispatch: Dispatch<any>) =>
+export const showHomePage = (dispatch: Dispatch<any>): object =>
   dispatch(setView(false));

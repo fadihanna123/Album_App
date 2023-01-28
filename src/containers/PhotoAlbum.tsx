@@ -43,9 +43,9 @@ const PhotoAlbum: React.FC = () => {
   /**
    * Handle refresh images list.
    *
-   * @returns Promise
+   * @async
+   * @returns { Promise<void> } Promise
    */
-
   const onRefresh = React.useCallback(async (): Promise<void> => {
     dispatch(setRefresh(true));
 

@@ -1,4 +1,3 @@
-import * as Haptics from 'expo-haptics';
 import { Dispatch } from 'redux';
 
 import { Album } from '../models';

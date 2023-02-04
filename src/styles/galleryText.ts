@@ -2,15 +2,17 @@ import { StyleSheet } from 'react-native';
 
 export const galleryTextStyles = StyleSheet.create({
   txtBox: {
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderRadius: 10,
-    borderColor: 'white',
-    fontSize: 35,
-    color: 'white',
+    fontSize: 45,
     textAlign: 'center',
     margin: 10,
+    padding: 10,
   },
   name: {
-    fontSize: 20,
+    fontSize: 15,
+    fontStyle: 'italic',
+    textAlign: 'right',
+    marginBottom: 20,
   },
 });

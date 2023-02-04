@@ -28,6 +28,6 @@ export const PhotoAlbumStyles = StyleSheet.create({
     height: 100,
   },
   spinnerTextStyle: {
-    color: '#FFF',
+    color: '#fff',
   },
 });

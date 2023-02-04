@@ -7,6 +7,11 @@ export const selectedPhotoInfoStyles = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     width: '100%',
+    lineHeight: 18,
   },
-  fileInfoHeading: { fontWeight: 'bold', fontSize: 20, textAlign: 'center' },
+  fileInfoHeading: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center',
+  },
 });

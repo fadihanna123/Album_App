@@ -7,8 +7,11 @@ export const photoItemStyles = StyleSheet.create({
   galleryPhoto: {
     width: 85,
     height: 100,
+    borderColor: '#fff',
+    borderWidth: 1,
+    borderRadius: 10,
   },
   spinnerTextStyle: {
-    color: '#FFF',
+    color: '#fff',
   },
 });

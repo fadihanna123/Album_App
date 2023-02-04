@@ -10,5 +10,7 @@
     "strict": true,
     "target": "ESNext"
   },
+  "include": ["src/**/*", "App.tsx", "index.d.ts"],
+  "exclude": ["node_modules"],
   "extends": "expo/tsconfig.base"
 }

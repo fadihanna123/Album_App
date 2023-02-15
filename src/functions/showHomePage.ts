@@ -8,7 +8,7 @@ import { setView } from '../redux/reducers';
  * @function showHomePage
  * @param { Dispatch<any> } dispatch
  * @returns { object } AnyAction.
+ * @example showHomePage(dispatch);
  */
-
 export const showHomePage = (dispatch: Dispatch<any>): object =>
   dispatch(setView(false));

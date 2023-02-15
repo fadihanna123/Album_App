@@ -5,4 +5,4 @@ yarn install
 eslint .
 yarn manypkg check
 npx pretty-quick --staged
-rimraf node_modules
+rm -rf node_modules

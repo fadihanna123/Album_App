@@ -11,6 +11,7 @@ import { setList, setLoading } from '../redux/reducers';
  * @async
  * @param { Dispatch<any> } dispatch
  * @returns { Promise<void> } Promise.
+ * @example showAlbum(dispatch);
  */
 export const showAlbum = async (dispatch: Dispatch<any>): Promise<void> => {
   await MediaLibrary.requestPermissionsAsync();

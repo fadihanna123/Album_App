@@ -9,11 +9,13 @@ import { setLoading, setSelectedPhoto, setView } from '../redux/reducers';
  * @function showSelectedPic
  * @param { Dispatch<any> } dispatch - Dispatch
  * @param { void } selectedPhoto - Selected photo
+ * @returns { void }
+ * @example showSelectedPic(dispatch, {})
  */
 export const showSelectedPic = (
   dispatch: Dispatch<any>,
   selectedPhoto: Album
-) => {
+): void => {
   dispatch(setLoading(true));
   dispatch(setSelectedPhoto(selectedPhoto));
   dispatch(setView(true));

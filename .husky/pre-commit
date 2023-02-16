@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn install
-eslint .
+yarn lint
 yarn manypkg check
 npx pretty-quick --staged
 rm -rf node_modules

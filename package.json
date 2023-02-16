@@ -10,14 +10,15 @@
     "url": "https://github.com/fadihanna123/Album_App"
   },
   "license": "MIT",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "lastUpgrade": "20230201",
   "scripts": {
     "start": "expo start --tunnel",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@babel/core": "^7.20.12",

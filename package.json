@@ -10,7 +10,7 @@
     "url": "https://github.com/fadihanna123/Album_App"
   },
   "license": "MIT",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "lastUpgrade": "20230201",
   "scripts": {
     "start": "expo start --tunnel",

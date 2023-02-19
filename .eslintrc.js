@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   env: {
     browser: true,
     es2022: true,
@@ -94,11 +94,8 @@ module.exports = {
     'id-denylist': [
       'error',
       'any',
-      'Number',
       'number',
-      'String',
       'string',
-      'Boolean',
       'boolean',
       'Undefined',
       'undefined',
@@ -157,3 +154,5 @@ module.exports = {
     'valid-typeof': 'off',
   },
 };
+
+module.exports = config;

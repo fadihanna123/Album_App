@@ -77,7 +77,7 @@ const PhotoAlbum: React.FC = () => {
         <View style={PhotoAlbumStyles.imageViewer}>
           <Spinner
             visible={loading}
-            textContent={'Loading...'}
+            textContent='Loading...'
             textStyle={PhotoAlbumStyles.spinnerTextStyle}
           />
           <Image
@@ -92,7 +92,7 @@ const PhotoAlbum: React.FC = () => {
               color='#000'
               title='Back'
               onPress={() => showHomePage(dispatch)}
-            ></Button>
+            />
           </View>
           <Text style={selectedPhotoInfoStyles.textContainer}>
             <Text style={selectedPhotoInfoStyles.fileInfoHeading}>

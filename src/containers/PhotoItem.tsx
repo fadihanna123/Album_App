@@ -17,7 +17,7 @@ const PhotoItem: React.FC<{ album: Album }> = ({ album }: { album: Album }) => {
     <View>
       <Spinner
         visible={loading}
-        textContent={'Loading...'}
+        textContent='Loading...'
         textStyle={photoItemStyles.spinnerTextStyle}
         animation='fade'
         overlayColor='black'

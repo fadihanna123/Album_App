@@ -8,12 +8,15 @@ const config = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'eslint:recommended',
+    'universe/native',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: ['tsconfig.json'],
     sourceType: 'module',
     tsconfigRootDir: __dirname,
+    ecmaVersion: 2023,
   },
   plugins: [
     'eslint-plugin-import',
@@ -22,6 +25,7 @@ const config = {
     '@typescript-eslint',
   ],
   rules: {
+    'no-unused-vars': 'off',
     'no-console': 'error',
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': [

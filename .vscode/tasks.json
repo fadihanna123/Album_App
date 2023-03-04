@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "install",
+      "type": "npm",
+      "script": "yarn",
+      "auto": true
+    }
+  ]
+}

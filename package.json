@@ -26,6 +26,7 @@
     "@manypkg/cli": "^0.20.0",
     "@react-native-async-storage/async-storage": "~1.17.11",
     "@reduxjs/toolkit": "^1.9.3",
+    "@types/eslint": "^8.37.0",
     "@types/react": "~18.0.28",
     "@types/react-dom": "~18.0.11",
     "@types/react-native": "~0.71.3",

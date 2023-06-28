@@ -1,9 +1,10 @@
 import React from 'react';
 import { StatusBar, Text, useColorScheme, View } from 'react-native';
+import { appStyles, galleryTextStyles } from '../styles';
 
+// Components
 import GalleryTxt from '../containers/GalleryTxt';
 import PhotoAlbum from '../containers/PhotoAlbum';
-import { appStyles, galleryTextStyles } from '../styles';
 
 const Layout: React.FC = () => {
   const scheme = useColorScheme();

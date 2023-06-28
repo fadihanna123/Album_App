@@ -25,6 +25,8 @@ import {
   setRefresh,
 } from '../redux/reducers';
 import { PhotoAlbumStyles, selectedPhotoInfoStyles } from '../styles';
+
+// Components
 import PhotoItem from './PhotoItem';
 
 const PhotoAlbum: React.FC = () => {

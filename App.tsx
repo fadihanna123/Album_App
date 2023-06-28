@@ -1,8 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-
-import Layout from './src/app/Layout';
 import { store } from './src/redux/app';
+
+// Components
+import Layout from './src/app/Layout';
 
 const App: React.FC = () => {
   return (

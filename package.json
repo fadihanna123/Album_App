@@ -42,7 +42,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "expo": "^48.0.19",
     "expo-av": "~13.2.1",
-    "expo-camera": "~13.2.1",
+    "expo-camera": "~13.4.2",
     "expo-dev-client": "~2.2.1",
     "expo-media-library": "~15.4.0",
     "expo-splash-screen": "~0.18.2",

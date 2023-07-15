@@ -18,7 +18,7 @@ export const showAlbum = async (dispatch: Dispatch<any>): Promise<void> => {
   const { status } = await MediaLibrary.getPermissionsAsync();
 
   if (status !== 'granted') {
-    Alert.alert('Your mobile should allow access to pictures!');
+    Alert.alert('Your mobile should allow access to pictures first!');
     return;
   }
 

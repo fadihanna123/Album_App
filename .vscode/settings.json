@@ -10,6 +10,6 @@
     "**/node_modules": true
   },
   "git.ignoreLimitWarning": true,
-  "terminal.integrated.defaultProfile.windows": "Ubuntu-Preview (WSL)",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "editor.fontSize": 14
 }

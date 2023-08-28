@@ -40,7 +40,7 @@
     "eslint-plugin-jsdoc": "^46.5.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^5.0.0",
-    "expo": "^49.0.7",
+    "expo": "^49.0.8",
     "expo-av": "~13.4.1",
     "expo-camera": "~13.2.1",
     "expo-dev-client": "~2.4.6",

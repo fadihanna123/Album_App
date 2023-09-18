@@ -45,7 +45,7 @@
     "expo-camera": "~13.4.4",
     "expo-dev-client": "~2.4.8",
     "expo-media-library": "~15.4.1",
-    "expo-splash-screen": "~0.20.5",
+    "expo-splash-screen": "~0.22.0",
     "expo-status-bar": "~1.6.0",
     "expo-updates": "~0.18.12",
     "husky": "^8.0.3",

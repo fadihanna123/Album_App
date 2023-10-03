@@ -24,7 +24,7 @@
   "dependencies": {
     "@babel/core": "^7.23.0",
     "@manypkg/cli": "^0.21.0",
-    "@react-native-async-storage/async-storage": "1.17.11",
+    "@react-native-async-storage/async-storage": "1.19.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/eslint": "^8.44.3",
     "@types/react": "~18.2.18",

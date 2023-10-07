@@ -12,6 +12,7 @@
     "sourceMap": true
   },
   "include": ["src/**/*", "App.tsx", "index.d.ts"],
+  "exclude": ["node_modules"],
   "files": [".eslintrc.js"],
   "extends": "expo/tsconfig.base"
 }

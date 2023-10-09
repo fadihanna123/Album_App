@@ -43,7 +43,7 @@
     "expo": "^49.0.13",
     "expo-av": "~13.4.1",
     "expo-camera": "~13.4.4",
-    "expo-media-library": "~15.4.1",
+    "expo-media-library": "~15.6.0",
     "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "expo-updates": "~0.18.16",

@@ -1180,23 +1180,7 @@
     "@babel/parser" "^7.22.15"
     "@babel/types" "^7.22.15"
 
-"@babel/traverse@^7.20.0", "@babel/traverse@^7.23.0":
-  version "7.23.2"
-  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.23.2.tgz#329c7a06735e144a506bdb2cad0268b7f46f4ad8"
-  integrity sha512-azpe59SQ48qG6nu2CzcMLbxUudtN+dOM9kDbUqGq3HXUJRlo7i8fvPoxQUzYgLZ4cMVmuZgm8vvBpNeRhd6XSw==
-  dependencies:
-    "@babel/code-frame" "^7.22.13"
-    "@babel/generator" "^7.23.0"
-    "@babel/helper-environment-visitor" "^7.22.20"
-    "@babel/helper-function-name" "^7.23.0"
-    "@babel/helper-hoist-variables" "^7.22.5"
-    "@babel/helper-split-export-declaration" "^7.22.6"
-    "@babel/parser" "^7.23.0"
-    "@babel/types" "^7.23.0"
-    debug "^4.1.0"
-    globals "^11.1.0"
-
-"@babel/traverse@^7.23.2":
+"@babel/traverse@^7.20.0", "@babel/traverse@^7.23.0", "@babel/traverse@^7.23.2":
   version "7.23.2"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.23.2.tgz#329c7a06735e144a506bdb2cad0268b7f46f4ad8"
   integrity sha512-azpe59SQ48qG6nu2CzcMLbxUudtN+dOM9kDbUqGq3HXUJRlo7i8fvPoxQUzYgLZ4cMVmuZgm8vvBpNeRhd6XSw==
@@ -2324,7 +2308,7 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
-"@types/eslint@^8.44.6":
+"@types/eslint@^8.44.3":
   version "8.44.6"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.44.6.tgz#60e564551966dd255f4c01c459f0b4fb87068603"
   integrity sha512-P6bY56TVmX8y9J87jHNgQh43h6VVU+6H7oN7hgvivV81K2XY8qJZ5vqPy/HdUoVIelii2kChYVzQanlswPWVFw==
@@ -2400,14 +2384,14 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.8.tgz#805eae6e8f41bd19e88917d2ea200dc992f405d3"
   integrity sha512-kMpQpfZKSCBqltAJwskgePRaYRFukDkm1oItcAbC3gNELR20XIBcN9VRgg4+m8DKsTfkWeA4m4Imp4DDuWy7FQ==
 
-"@types/react-dom@~18.2.13":
-  version "18.2.13"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.13.tgz#89cd7f9ec8b28c8b6f0392b9591671fb4a9e96b7"
-  integrity sha512-eJIUv7rPP+EC45uNYp/ThhSpE16k22VJUknt5OLoH9tbXoi8bMhwLf5xRuWMywamNbWzhrSmU7IBJfPup1+3fw==
+"@types/react-dom@~18.0.10":
+  version "18.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.11.tgz#321351c1459bc9ca3d216aefc8a167beec334e33"
+  integrity sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==
   dependencies:
     "@types/react" "*"
 
-"@types/react-native-loading-spinner-overlay@^0.5.4":
+"@types/react-native-loading-spinner-overlay@^0.5.3":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@types/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-0.5.4.tgz#69f443799903604b58110609ee7cd5b6c6ca8c82"
   integrity sha512-Oy6QK7iPtVX40mbVZh+0n2F30OaXZmedIWldajft/twC013JBTEIsxJi/baHAru4A/0bo0z6dOkJ7LXxQH1sng==
@@ -2423,7 +2407,7 @@
     "@react-native/virtualized-lists" "^0.72.4"
     "@types/react" "*"
 
-"@types/react-native@~0.72.5":
+"@types/react-native@~0.72.3":
   version "0.72.5"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.72.5.tgz#33a0d0c3c724395ee05bb37255937dcb3fae6d5f"
   integrity sha512-HAt+EC576kbyg3+qruzbOLgVhgDHTHJ3d3rTkWRJ0wukze+l3ldWUkh1IarERHqsUlWwmkuYu0+4TQE5y1EjwA==
@@ -2440,7 +2424,7 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@~18.2.31":
+"@types/react@~18.2.25":
   version "18.2.31"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.31.tgz#74ae2630e4aa9af599584157abd3b95d96fb9b40"
   integrity sha512-c2UnPv548q+5DFh03y8lEDeMfDwBn9G3dRwfkrxQMo/dOtRHUUO57k6pHvBIfH/VF4Nh+98mZ5aaSe+2echD5g==
@@ -2522,7 +2506,7 @@
     semver "^7.5.4"
     ts-api-utils "^1.0.1"
 
-"@typescript-eslint/eslint-plugin@^6.8.0":
+"@typescript-eslint/eslint-plugin@^6.7.4":
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-6.8.0.tgz#06abe4265e7c82f20ade2dcc0e3403c32d4f148b"
   integrity sha512-GosF4238Tkes2SHPQ1i8f6rMtG6zlKwMEB0abqSJ3Npvos+doIlc/ATG+vX1G9coDF3Ex78zM3heXHLyWEwLUw==
@@ -2550,7 +2534,7 @@
     "@typescript-eslint/visitor-keys" "6.7.4"
     debug "^4.3.4"
 
-"@typescript-eslint/parser@^6.8.0":
+"@typescript-eslint/parser@^6.7.4":
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-6.8.0.tgz#bb2a969d583db242f1ee64467542f8b05c2e28cb"
   integrity sha512-5tNs6Bw0j6BdWuP8Fx+VH4G9fEPDxnVI7yH1IAPkQH5RUtvKwRoqdecAPdQXv4rSOADAaz1LFBZvZG7VbXivSg==
@@ -4448,7 +4432,7 @@ eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
   integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
 
-eslint@^8.52.0:
+eslint@^8.51.0:
   version "8.52.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.52.0.tgz#d0cd4a1fac06427a61ef9242b9353f36ea7062fc"
   integrity sha512-zh/JHnaixqHZsolRB/w9/02akBk9EPrOs9JwcTP2ek7yL5bVvXuRariiaAjjoJ5DvuwQ1WAE/HsMz+w17YgBCg==

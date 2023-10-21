@@ -9,10 +9,9 @@
     "resolveJsonModule": true,
     "strict": true,
     "target": "ESNext",
-    "sourceMap": true
+    "sourceMap": false
   },
-  "include": ["src/**/*", "App.tsx", "index.d.ts"],
+  "include": ["src/**/*", "App.tsx"],
   "exclude": ["node_modules"],
-  "files": [".eslintrc.js"],
   "extends": "expo/tsconfig.base"
 }

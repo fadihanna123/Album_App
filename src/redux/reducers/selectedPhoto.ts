@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Album } from '../../models';
 import { RootState } from '../app';
+import { Asset } from 'expo-media-library';
 
-const initialState = {} as Album | null;
+const initialState = {} as Asset | null;
 
 export const selectedPhotoSlice = createSlice({
   name: 'selectedPhoto',
   initialState,
   reducers: {
-    setSelectedPhoto: (state, action: PayloadAction<Album | null>) => {
+    setSelectedPhoto: (state, action: PayloadAction<Asset | null>) => {
       return (state = action.payload);
     },
   },

@@ -28,6 +28,7 @@ import { PhotoAlbumStyles, selectedPhotoInfoStyles } from '../styles';
 
 // Components
 import PhotoItem from './PhotoItem';
+import { Asset } from 'expo-media-library';
 
 const PhotoAlbum: React.FC = () => {
   const list = useAppSelector(getList);
@@ -51,13 +52,14 @@ const PhotoAlbum: React.FC = () => {
   const onRefresh = React.useCallback(async (): Promise<void> => {
     dispatch(setRefresh(true));
 
-    const results = await MediaLibrary.getAssetsAsync({
-      first: 1000,
-      mediaType: ['photo'],
-      sortBy: ['creationTime'],
-    });
+    const results: MediaLibrary.PagedInfo<MediaLibrary.Asset> =
+      await MediaLibrary.getAssetsAsync({
+        first: 1000,
+        mediaType: ['photo'],
+        sortBy: ['creationTime'],
+      });
 
-    dispatch(setList(results as any));
+    dispatch(setList(results));
 
     dispatch(setLoading(false));
 
@@ -117,7 +119,7 @@ const PhotoAlbum: React.FC = () => {
           </Text>
         </View>
       ) : (
-        list?.assets?.map((album: any) => (
+        list?.assets?.map((album: Asset) => (
           <PhotoItem album={album} key={uid(album)} />
         ))
       )}

@@ -3,12 +3,12 @@ import { Image, TouchableOpacity, View } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 
 import { showSelectedPic } from '../functions';
-import { Album } from '../models';
 import { useAppDispatch, useAppSelector } from '../redux/app';
 import { getLoading } from '../redux/reducers';
 import { photoItemStyles } from '../styles';
+import { Asset } from 'expo-media-library';
 
-const PhotoItem: React.FC<{ album: Album }> = ({ album }: { album: Album }) => {
+const PhotoItem: React.FC<{ album: Asset }> = ({ album }: { album: Asset }) => {
   const loading = useAppSelector(getLoading);
 
   const dispatch = useAppDispatch();

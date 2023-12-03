@@ -9,7 +9,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import Spinner from 'react-native-loading-spinner-overlay';
 import { uid } from 'react-uid';
 
 import { convertUnixToTime, showAlbum, showHomePage, wait } from '../functions';
@@ -79,11 +78,6 @@ const PhotoAlbum: React.FC = () => {
     >
       {view && !loading ? (
         <View style={PhotoAlbumStyles.imageViewer}>
-          <Spinner
-            visible={loading}
-            textContent='Loading...'
-            textStyle={PhotoAlbumStyles.spinnerTextStyle}
-          />
           <Image
             source={{
               uri: selectedPhoto?.uri,

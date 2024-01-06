@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn install
+yarn
 yarn lint
 yarn manypkg check
-npx pretty-quick --staged
+yarn format
 rm -rf node_modules

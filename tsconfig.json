@@ -32,9 +32,9 @@
     "noImplicitOverride": true,
     "rootDir": ".",
     "noUnusedLocals": true,
-    "noPropertyAccessFromIndexSignature": true
+    "noPropertyAccessFromIndexSignature": true,
   },
   "include": ["src/**/*", "App.tsx"],
   "exclude": ["node_modules"],
-  "extends": "expo/tsconfig.base"
+  "extends": "expo/tsconfig.base",
 }

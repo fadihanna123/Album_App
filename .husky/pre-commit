@@ -6,3 +6,4 @@ yarn lint
 yarn manypkg check
 yarn format
 rm -rf node_modules
+git add -A

@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.23.7",
-    "@expo/ngrok": "^2.5.0",
+    "@expo/ngrok": "^4.1.0",
     "@expo/webpack-config": "^19.0.1",
     "@manypkg/cli": "^0.21.2",
     "@reduxjs/toolkit": "^2.0.1",

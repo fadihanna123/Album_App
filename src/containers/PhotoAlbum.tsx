@@ -62,7 +62,10 @@ const PhotoAlbum: React.FC = () => {
 
     dispatch(setLoading(false));
 
-    wait(500).then(() => dispatch(setRefresh(false)));
+    wait(500)
+      .then(() => dispatch(setRefresh(false)))
+      // eslint-disable-next-line no-console
+      .catch((err: Error) => console.log(err));
   }, []);
 
   useEffect(() => {

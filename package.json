@@ -1,7 +1,7 @@
 {
   "name": "album_app",
   "license": "MIT",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -27,8 +27,8 @@
     "@reduxjs/toolkit": "^2.1.0",
     "@types/eslint": "^8.56.2",
     "@types/react": "~18.2.55",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
     "eslint": "^8.56.0",
     "expo": "^50.0.6",
     "expo-media-library": "~15.9.1",

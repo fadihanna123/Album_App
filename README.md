@@ -1,53 +1,43 @@
-<h1 align="center">Welcome to Album App 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.21-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/node-%3E%3D14.12.0-blue.svg" />
-  <img src="https://img.shields.io/badge/npm-Please%20use%20Yarn%20instead%20of%20NPM%20to%20install%20dependencies-blue.svg" />
-  <a href="https://github.com/fadihanna123/Album_App#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/fadihanna123/Album_App/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-  </a>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/fadihanna123/Album_App" />
-  </a>
-</p>
+## Album App 
+> Album App shows the first 100 photos fetched from your mobile gallery. This app works on both iOS and Android. 
 
-> Album App
+<br />
 
-## Prerequisites
-
-- Node >=14.12.0
-- Npm Please use Yarn instead of NPM to install dependencies
-
-
-## Install
+## 🚀 Quick Start
+```sh
+# Clone the project
+git clone https://github.com/fadihanna123/Album_App.git
+```
 
 ```sh
+# Go to the directory
+cd Album_App
+```
+
+```sh
+# Install dependencies
 yarn
 ```
 
-## Usage
-
 ```sh
-yarn start
+# Start the server
+yarn dev
 ```
+- Download and install Expo app
 
-## Author
+- Scan QR code using your mobile camera
 
-👤 **Fadi Hanna**
+- Enjoy!
 
-* Github: [@fadihanna123](https://github.com/fadihanna123)
-* LinkedIn: [@fadi-hanna-5506401b0](https://linkedin.com/in/fadi-hanna-5506401b0)
+## Usage
+> You select any image to display it in full screen and see image information.
 
 ## 🤝 Contributing
+1 - Clone the project. <br />
+2 - Fork the project. <br />
+3 - Create your own branch: ```
+git checkout -b <your branchname>``` <br />
+4 - Push changes. <br />
+5 - Create a pull request. <br />
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fadihanna123/Album_App/issues). 
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fadihanna123/Album_App/issues).

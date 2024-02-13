@@ -1,17 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '../app';
+import { Asset, PagedInfo } from 'expo-media-library';
 
-const initialState = {} as { assets: [Record<string, never>] };
+const initialState = {} as PagedInfo<Asset>;
 
 export const listSlice = createSlice({
   name: 'list',
   initialState,
   reducers: {
-    setList: (
-      state,
-      action: PayloadAction<{ assets: [Record<string, never>] }>
-    ) => {
+    setList: (state, action: PayloadAction<PagedInfo<Asset>>) => {
       return (state = action.payload);
     },
   },

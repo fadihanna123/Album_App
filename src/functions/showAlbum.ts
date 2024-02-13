@@ -23,11 +23,12 @@ export const showAlbum = async (dispatch: Dispatch<any>): Promise<void> => {
   }
 
   try {
-    const results: any = await MediaLibrary.getAssetsAsync({
-      first: 1000,
-      mediaType: ['photo'],
-      sortBy: ['creationTime'],
-    });
+    const results: MediaLibrary.PagedInfo<MediaLibrary.Asset> =
+      await MediaLibrary.getAssetsAsync({
+        first: 1000,
+        mediaType: ['photo'],
+        sortBy: ['creationTime'],
+      });
 
     dispatch(setList(results));
   } catch (e) {

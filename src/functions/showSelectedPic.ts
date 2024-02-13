@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux';
 
-import { Album } from '../models';
 import { setLoading, setSelectedPhoto, setView } from '../redux/reducers';
+import { Asset } from 'expo-media-library';
 
 /**
  * Show the selected picture.
@@ -14,7 +14,7 @@ import { setLoading, setSelectedPhoto, setView } from '../redux/reducers';
  */
 export const showSelectedPic = (
   dispatch: Dispatch<any>,
-  selectedPhoto: Album
+  selectedPhoto: Asset
 ): void => {
   dispatch(setLoading(true));
   dispatch(setSelectedPhoto(selectedPhoto));

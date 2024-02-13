@@ -9,7 +9,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import Spinner from 'react-native-loading-spinner-overlay';
 import { uid } from 'react-uid';
 
 import { convertUnixToTime, showAlbum, showHomePage, wait } from '../functions';
@@ -28,6 +27,7 @@ import { PhotoAlbumStyles, selectedPhotoInfoStyles } from '../styles';
 
 // Components
 import PhotoItem from './PhotoItem';
+import { Asset } from 'expo-media-library';
 
 const PhotoAlbum: React.FC = () => {
   const list = useAppSelector(getList);
@@ -51,17 +51,21 @@ const PhotoAlbum: React.FC = () => {
   const onRefresh = React.useCallback(async (): Promise<void> => {
     dispatch(setRefresh(true));
 
-    const results = await MediaLibrary.getAssetsAsync({
-      first: 1000,
-      mediaType: ['photo'],
-      sortBy: ['creationTime'],
-    });
+    const results: MediaLibrary.PagedInfo<MediaLibrary.Asset> =
+      await MediaLibrary.getAssetsAsync({
+        first: 1000,
+        mediaType: ['photo'],
+        sortBy: ['creationTime'],
+      });
 
-    dispatch(setList(results as any));
+    dispatch(setList(results));
 
     dispatch(setLoading(false));
 
-    wait(500).then(() => dispatch(setRefresh(false)));
+    wait(500)
+      .then(() => dispatch(setRefresh(false)))
+      // eslint-disable-next-line no-console
+      .catch((err: Error) => console.log(err));
   }, []);
 
   useEffect(() => {
@@ -77,11 +81,6 @@ const PhotoAlbum: React.FC = () => {
     >
       {view && !loading ? (
         <View style={PhotoAlbumStyles.imageViewer}>
-          <Spinner
-            visible={loading}
-            textContent='Loading...'
-            textStyle={PhotoAlbumStyles.spinnerTextStyle}
-          />
           <Image
             source={{
               uri: selectedPhoto?.uri,
@@ -117,7 +116,7 @@ const PhotoAlbum: React.FC = () => {
           </Text>
         </View>
       ) : (
-        list?.assets?.map((album: any) => (
+        list?.assets?.map((album: Asset) => (
           <PhotoItem album={album} key={uid(album)} />
         ))
       )}

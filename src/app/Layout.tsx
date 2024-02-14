@@ -28,7 +28,7 @@ const Layout: React.FC = () => {
             },
           ]}
         >
-          Created by Fadi Hanna
+          Created by Fadi TEST
         </Text>
 
         <PhotoAlbum />

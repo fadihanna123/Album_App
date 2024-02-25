@@ -9,7 +9,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import { uid } from 'react-uid';
 
 import { convertUnixToTime, showAlbum, showHomePage, wait } from '../functions';
 import { useAppDispatch, useAppSelector } from '../redux/app';
@@ -117,7 +116,7 @@ const PhotoAlbum: React.FC = () => {
         </View>
       ) : (
         list?.assets?.map((album: Asset) => (
-          <PhotoItem album={album} key={uid(album)} />
+          <PhotoItem album={album} key={album.id} />
         ))
       )}
       <StatusBar style='auto' />

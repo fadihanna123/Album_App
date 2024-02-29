@@ -21,7 +21,7 @@
     "format": "prettier -w ."
   },
   "dependencies": {
-    "@babel/core": "^7.23.9",
+    "@babel/core": "^7.24.0",
     "@manypkg/cli": "^0.21.2",
     "@reduxjs/toolkit": "^2.2.1",
     "@types/eslint": "^8.56.4",

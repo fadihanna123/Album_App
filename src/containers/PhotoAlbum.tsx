@@ -37,7 +37,7 @@ const PhotoAlbum: React.FC = () => {
 
   const refresh = useAppSelector(getRefresh);
 
-  const selectedPhoto = useAppSelector(getSelectedPhoto);
+  const selectedPhoto = useAppSelector(getSelectedPhoto)!;
 
   const dispatch = useAppDispatch();
 
@@ -99,19 +99,19 @@ const PhotoAlbum: React.FC = () => {
               File Info: {'\n'}
             </Text>
             Created at:
-            {' ' + convertUnixToTime(selectedPhoto!.creationTime)}
+            {' ' + convertUnixToTime(selectedPhoto.creationTime)}
             {'\n'}
-            Filename: {selectedPhoto!.filename} {'\n'}
-            Height: {selectedPhoto!.height} {'\n'}
-            Id: {selectedPhoto!.id} {'\n'}
+            Filename: {selectedPhoto.filename} {'\n'}
+            Height: {selectedPhoto.height} {'\n'}
+            Id: {selectedPhoto.id} {'\n'}
             MediaType:{' '}
-            {selectedPhoto!.mediaType.charAt(0).toUpperCase() +
-              selectedPhoto!.mediaType.slice(1)}{' '}
+            {selectedPhoto.mediaType.charAt(0).toUpperCase() +
+              selectedPhoto.mediaType.slice(1)}{' '}
             {'\n'}
             ModificationTime:{' '}
-            {convertUnixToTime(selectedPhoto!.modificationTime)} {'\n'}
-            Url: {selectedPhoto!.uri} {'\n'}
-            Width: {selectedPhoto!.width} {'\n'}
+            {convertUnixToTime(selectedPhoto.modificationTime)} {'\n'}
+            Url: {selectedPhoto.uri} {'\n'}
+            Width: {selectedPhoto.width} {'\n'}
           </Text>
         </View>
       ) : (

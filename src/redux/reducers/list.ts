@@ -3,14 +3,20 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../app';
 import { Asset, PagedInfo } from 'expo-media-library';
 
-const initialState = {} as PagedInfo<Asset>;
+const initialState: PagedInfo<Asset> = {
+  assets: [],
+  endCursor: '',
+  hasNextPage: false,
+  totalCount: 0,
+};
 
 export const listSlice = createSlice({
   name: 'list',
   initialState,
   reducers: {
     setList: (state, action: PayloadAction<PagedInfo<Asset>>) => {
-      return (state = action.payload);
+      state = action.payload;
+      return state;
     },
   },
 });

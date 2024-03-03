@@ -9,7 +9,8 @@ export const loadingSlice = createSlice({
   initialState,
   reducers: {
     setLoading: (state, action: PayloadAction<boolean>) => {
-      return (state = action.payload);
+      state = action.payload;
+      return state;
     },
   },
 });

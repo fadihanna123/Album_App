@@ -10,7 +10,8 @@ export const selectedPhotoSlice = createSlice({
   initialState,
   reducers: {
     setSelectedPhoto: (state, action: PayloadAction<Asset | null>) => {
-      return (state = action.payload);
+      state = action.payload;
+      return state;
     },
   },
 });

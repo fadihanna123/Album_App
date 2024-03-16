@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.24.0",
-    "@manypkg/cli": "^0.21.2",
+    "@manypkg/cli": "^0.21.3",
     "@reduxjs/toolkit": "^2.2.1",
     "@types/eslint": "^8.56.5",
     "@types/react": "~18.2.66",

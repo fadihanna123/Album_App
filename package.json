@@ -23,7 +23,7 @@
     "clear": "rimraf node_modules dist"
   },
   "dependencies": {
-    "@babel/core": "^7.24.3",
+    "@babel/core": "^7.24.4",
     "@manypkg/cli": "^0.21.3",
     "@reduxjs/toolkit": "^2.2.3",
     "@types/eslint": "^8.56.7",

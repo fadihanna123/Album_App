@@ -1,7 +1,7 @@
 {
   "name": "album_app",
   "license": "MIT",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -26,25 +26,25 @@
     "@babel/core": "^7.24.4",
     "@manypkg/cli": "^0.21.4",
     "@reduxjs/toolkit": "^2.2.3",
-    "@types/eslint": "^8.56.7",
-    "@types/react": "~18.2.79",
+    "@types/eslint": "^8.56.10",
+    "@types/react": "~18.2.45",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
-    "eslint": "^8.57.0",
+    "eslint": "^9.1.1",
     "expo": "^50.0.17",
     "expo-media-library": "~15.9.2",
     "expo-status-bar": "~1.11.1",
     "expo-updates": "~0.24.12",
     "husky": "^9.0.11",
-    "react": "^18.2.0",
-    "react-native": "^0.74.0",
+    "react": "18.2.0",
+    "react-native": "0.73.6",
     "react-native-web": "~0.19.11",
     "react-redux": "^9.1.1",
     "redux": "^5.0.1",
     "typescript": "^5.4.5"
   },
   "engines": {
-    "node": ">=16.0.0 <=21.x.x",
+    "node": ">=16.0.0 <=22.x.x",
     "npm": "Please use Yarn instead of NPM to install dependencies"
   }
 }

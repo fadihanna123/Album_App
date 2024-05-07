@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
     "eslint": "^9.2.0",
-    "expo": "^50.0.17",
+    "expo": "^51.0.0",
     "expo-media-library": "~15.9.2",
     "expo-status-bar": "~1.11.1",
     "expo-updates": "~0.24.12",

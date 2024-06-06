@@ -29,7 +29,7 @@
     "@types/eslint": "^8.56.10",
     "@types/react": "~18.2.45",
     "@typescript-eslint/eslint-plugin": "^7.11.0",
-    "@typescript-eslint/parser": "^7.11.0",
+    "@typescript-eslint/parser": "^7.12.0",
     "eslint": "^9.4.0",
     "expo": "^51.0.10",
     "expo-media-library": "~16.0.3",

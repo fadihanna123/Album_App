@@ -32,7 +32,7 @@
     "@typescript-eslint/parser": "^7.14.1",
     "eslint": "^9.4.0",
     "expo": "^51.0.14",
-    "expo-media-library": "~16.0.3",
+    "expo-media-library": "~16.0.4",
     "expo-status-bar": "~1.12.1",
     "expo-updates": "~0.25.17",
     "husky": "^9.0.11",

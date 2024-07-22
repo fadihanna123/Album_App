@@ -34,7 +34,7 @@
     "expo": "^51.0.21",
     "expo-media-library": "~16.0.4",
     "expo-status-bar": "~1.12.1",
-    "expo-updates": "~0.25.20",
+    "expo-updates": "~0.25.21",
     "husky": "^9.1.1",
     "react": "18.3.1",
     "react-native": "0.74.3",

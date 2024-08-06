@@ -37,7 +37,7 @@
     "expo-updates": "~0.25.21",
     "husky": "^9.1.4",
     "react": "18.3.1",
-    "react-native": "0.74.4",
+    "react-native": "0.74.5",
     "react-native-web": "~0.19.12",
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",
